@@ -1,6 +1,12 @@
 import React from 'react';
+import {  useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Featured = () => {
+  const navigate = useNavigate();
+  const handleSearch = () => {
+      navigate('/berlin')
+      
+    };
   // Static data for cities and properties
   const citiesData = [
     { city: "Berlin", properties: 123 },
@@ -29,6 +35,7 @@ const Featured = () => {
               }
               alt={item.city}
               className="w-full h-full object-cover brightness-75 transition duration-300 ease-in-out"
+              onClick={handleSearch}
             />
             <div className="absolute bottom-5 left-5">
               <h1 className="text-3xl font-bold">{item.city}</h1>
