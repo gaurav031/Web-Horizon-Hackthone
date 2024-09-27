@@ -6,14 +6,12 @@ import "react-date-range/dist/styles.css";
 import { useNavigate } from "react-router-dom";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+
 
 const Hadder = ({ type }) => {
-<<<<<<< HEAD
+
     const navigate = useNavigate();
-=======
-  const navigate = useNavigate();
->>>>>>> 826be94b07b29a5cd32399b215a62d2faa6d9f5f
+
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
@@ -38,11 +36,8 @@ const Hadder = ({ type }) => {
   };
 
   const handleSearch = () => {
-<<<<<<< HEAD
+
     navigate('/hotels')
-=======
-    navigate("/hotels");
->>>>>>> 826be94b07b29a5cd32399b215a62d2faa6d9f5f
     console.log("Search:", { destination, dates, options });
   };
 
