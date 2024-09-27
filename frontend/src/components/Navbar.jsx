@@ -1,11 +1,27 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState(null); // State to hold user data
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    // Check for user data in localStorage
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      // If user data is found, set it in state
+      setUser(JSON.parse(storedUser));
+    }
+  }, []); // Empty dependency array ensures this runs once when component mounts
+
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // Remove user data from localStorage
+    setUser(null); // Reset user state to null
+    window.location.reload(); // Reload the page to reflect the changes
   };
 
   return (
@@ -23,18 +39,54 @@ const Navbar = () => {
       </button>
 
       {/* Navigation Links */}
-      <div className={`flex-col md:flex md:flex-row md:items-center absolute md:static bg-gray-100 transition-all duration-300 ${isOpen ? "top-16 left-0 w-full" : "top-[-200px]"} md:top-0 md:w-auto`}>
+      <div
+        className={`flex-col md:flex md:flex-row md:items-center absolute md:static bg-gray-100 transition-all duration-300 ${isOpen ? "top-16 left-0 w-full" : "top-[-200px]"
+          } md:top-0 md:w-auto`}
+      >
         <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
-          <Link to={"/offers"} className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-bold">
+          <Link
+            to={"/offers"}
+            className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-bold"
+          >
             Offers
           </Link>
-          <Link to={"/customer-service"} className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-bold">
+          <Link
+            to={"/customer-service"}
+            className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-bold"
+          >
             Customer Service
           </Link>
-          <img src="https://i.im.ge/2024/09/27/kdlCkq.profile.jpeg" alt="Profile Photo" className="w-12 h-12 rounded-full" />
-          <Link to={"/login"} className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300">
-            Sign in / Register
-          </Link>
+
+          {/* Conditionally render Sign In/Register or User Profile */}
+          {user ? (
+            <>
+              <div className="flex items-center space-x-2">
+                {/* Display user profile image or default icon */}
+                <img
+                  src="https://i.im.ge/2024/09/27/kdlCkq.profile.jpeg"
+                  alt="Profile"
+                  className="w-12 h-12 rounded-full"
+                />
+                {/* Display username */}
+                <span className="text-gray-700 font-bold">{user.user}</span>
+              </div>
+
+              {/* Logout button */}
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600 transition-all duration-300"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link
+              to={"/login"}
+              className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300"
+            >
+              Sign in / Register
+            </Link>
+          )}
         </div>
       </div>
     </div>
