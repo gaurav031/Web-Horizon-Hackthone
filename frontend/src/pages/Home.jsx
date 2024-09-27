@@ -6,6 +6,7 @@ import MailList from '../components/MailList';
 import FeaturedProperties from '../components/FeaturedProperties';
 import Featured from '../components/Featured';
 import PropertyList from '../components/PropertyList';
+import Whythis from '../components/Whythis';
 
 const Home = () => {
   return (
@@ -19,6 +20,8 @@ const Home = () => {
 
         <h1 className="homeTitle text-3xl font-bold text-gray-800 my-8 text-center">Browse by property type</h1>
         <PropertyList />
+
+        <Whythis />
 
         <h1 className="homeTitle text-3xl font-bold text-gray-800 my-8 text-center">Homes guests love</h1>
         <FeaturedProperties />

@@ -1,8 +1,8 @@
 export const hotel=[
     {
         "id": 1,
-        "name": "Hotel Clifton",
-        "image": "https://unsplash.com/photos/brown-wooden-lounge-chairs-near-pool-surrounded-by-palm-trees-vmIWr0NnpCQ",
+        "name": "HoteL Clifton",
+        "image": "https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o=",
         "deal": "Last Minute Deal",
         "location": "Jogeshwari West",
         "distance": "23.6 km from City Center",
@@ -240,11 +240,12 @@ export const hotel=[
         "roomsLeft": 3
     }
 ]
- export const BerlinData =[
+
+export const BerlinData =[
     {
         "id": 1,
         "name": "Hotel Clifton",
-        "image": "https://source.unsplash.com/random/300x200?hotel",
+        "image": "https://unsplash.com/photos/a-hotel-room-with-a-large-bed-and-a-flat-screen-tv-xMbzmWROWxE",
         "deal": "Last Minute Deal",
         "location": "Jogeshwari West",
         "distance": "23.6 km from City Center",
@@ -260,7 +261,7 @@ export const hotel=[
     {
         "id": 2,
         "name": "Ocean Breeze Resort",
-        "image": "https://source.unsplash.com/random/300x200?resort",
+        "image": "https://unsplash.com/photos/loft-bedroom-or-a-luxury-hotel-room-with-a-wooden-floor-and-a-gray-king-size-bed-3d-rendering-mock-up-5hMtWr9xq-U",
         "deal": "Summer Special",
         "location": "Versova Beach",
         "distance": "12.4 km from City Center",
@@ -276,7 +277,7 @@ export const hotel=[
     {
         "id": 3,
         "name": "The Grand Palace",
-        "image": "https://source.unsplash.com/random/300x200?luxury",
+        "image": "https://www.istockphoto.com/photo/luxury-resort-gm104731717-11404102?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhotel-building&utm_medium=affiliate&utm_source=unsplash&utm_term=hotel+building%3A%3Areduced-affiliates%3Ahalf",
         "deal": "Early Bird Discount",
         "location": "South Mumbai",
         "distance": "3.2 km from Gateway of India",
@@ -292,7 +293,7 @@ export const hotel=[
     {
         "id": 4,
         "name": "Mountain View Hotel",
-        "image": "https://source.unsplash.com/random/300x200?mountains",
+        "image": "https://www.istockphoto.com/photo/hotel-reception-lobby-gm1292354654-387176732?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhotel-building&utm_medium=affiliate&utm_source=unsplash&utm_term=hotel+building%3A%3Areduced-affiliates%3Ahalf",
         "deal": "Weekend Getaway",
         "location": "Lonavala",
         "distance": "90 km from Mumbai",
@@ -308,7 +309,7 @@ export const hotel=[
     {
         "id": 5,
         "name": "City Center Inn",
-        "image": "https://source.unsplash.com/random/300x200?city",
+        "image": "https://www.istockphoto.com/photo/hotel-with-empty-lot-gm151567458-10173730?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhotel-building&utm_medium=affiliate&utm_source=unsplash&utm_term=hotel+building%3A%3Areduced-affiliates%3Ahalf",
         "deal": "Limited Time Offer",
         "location": "Andheri East",
         "distance": "5 km from Airport",
@@ -324,7 +325,7 @@ export const hotel=[
     {
         "id": 6,
         "name": "Seaside Paradise",
-        "image": "https://source.unsplash.com/random/300x200?beach",
+        "image": "https://www.istockphoto.com/photo/resort-swimming-pool-gm119926339-15353142?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhotel-building&utm_medium=affiliate&utm_source=unsplash&utm_term=hotel+building%3A%3Areduced-affiliates%3Ahalf",
         "deal": "Flash Sale",
         "location": "Juhu Beach",
         "distance": "2 km from City Center",
@@ -340,7 +341,7 @@ export const hotel=[
     {
         "id": 7,
         "name": "Sunrise Valley Hotel",
-        "image": "https://source.unsplash.com/random/300x200?valley",
+        "image": "https://www.istockphoto.com/photo/residential-buildings-in-a-new-city-district-gm1401582615-454784894?utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhotel-building&utm_medium=affiliate&utm_source=unsplash&utm_term=hotel+building%3A%3Areduced-affiliates%3Ahalf",
         "deal": "Exclusive Deal",
         "location": "Mahabaleshwar",
         "distance": "110 km from Pune",
@@ -356,7 +357,7 @@ export const hotel=[
     {
         "id": 8,
         "name": "City Light Hotel",
-        "image": "https://source.unsplash.com/random/300x200?city-hotel",
+        "image": "https://media.istockphoto.com/id/104731717/photo/luxury-resort.webp?a=1&b=1&s=612x612&w=0&k=20&c=tcXN-KeAjvBupZOdfn9XroaWYuOfigRqw7nT1lZTvGM=",
         "deal": "Business Traveler Deal",
         "location": "Bandra Kurla Complex",
         "distance": "10 km from Airport",
@@ -372,7 +373,7 @@ export const hotel=[
     {
         "id": 9,
         "name": "Forest Retreat",
-        "image": "https://source.unsplash.com/random/300x200?forest",
+        "image": "https://unsplash.com/photos/a-large-building-with-a-fountain-in-front-of-it-o1TDUU5NNR4",
         "deal": "Nature Getaway",
         "location": "Matheran",
         "distance": "120 km from Mumbai",
@@ -388,7 +389,7 @@ export const hotel=[
     {
         "id": 10,
         "name": "Lakefront Hotel",
-        "image": "https://source.unsplash.com/random/300x200?lake",
+        "image": "https://unsplash.com/photos/a-very-tall-building-with-lots-of-windows-qU9IfwSuVVw",
         "deal": "Winter Special",
         "location": "Pawna Lake",
         "distance": "85 km from Mumbai",
