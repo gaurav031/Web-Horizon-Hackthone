@@ -40,7 +40,7 @@ const Hadder = ({ type }) => {
   return (
     <div className="bg-cover bg-center text-white flex justify-center relative h-[320px] mb-[40px] p-4 sm:p-6 md:p-8" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587115462907-cc1e5923b043?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
       <div className={`w-full max-w-6xl ${type === "list" ? "my-5" : "my-10"}`}>
-        <div className="flex flex-wrap gap-4 mb-12 text-black">
+        <div className="flex flex-wrap gap-4 mb-12 font-bold text-black">
           <div className="flex items-center gap-2 border border-white p-2 rounded-full hover:cursor-pointer">
             <FontAwesomeIcon icon={faBed} />
             <span className="text-sm md:text-base hover:cursor-pointer">Stays</span>
