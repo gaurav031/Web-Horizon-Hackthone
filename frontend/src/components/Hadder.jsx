@@ -6,9 +6,14 @@ import "react-date-range/dist/styles.css";
 import { useNavigate } from "react-router-dom";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 const Hadder = ({ type }) => {
+<<<<<<< HEAD
     const navigate = useNavigate();
+=======
+  const navigate = useNavigate();
+>>>>>>> 826be94b07b29a5cd32399b215a62d2faa6d9f5f
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
@@ -33,12 +38,16 @@ const Hadder = ({ type }) => {
   };
 
   const handleSearch = () => {
+<<<<<<< HEAD
     navigate('/hotels')
+=======
+    navigate("/hotels");
+>>>>>>> 826be94b07b29a5cd32399b215a62d2faa6d9f5f
     console.log("Search:", { destination, dates, options });
   };
 
   return (
-    <div className="bg-blue-900 text-white flex justify-center relative">
+    <div className="bg-slate-200 text-black flex justify-center relative h-[350px] mb-[100px]">
       <div className={`w-full max-w-6xl ${type === "list" ? "my-5" : "my-10"}`}>
         <div className="flex gap-10 mb-12">
           <div className="flex items-center gap-2 border border-white p-2 rounded-full">
@@ -84,11 +93,8 @@ const Hadder = ({ type }) => {
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
-              <div className="flex items-center gap-2">
-                <FontAwesomeIcon
-                  icon={faCalendarDays}
-                  className="text-gray-500"
-                />
+              <div className="flex items-center gap-2 relative">
+                <FontAwesomeIcon icon={faCalendarDays} className="text-gray-500" />
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="text-gray-500 cursor-pointer"
@@ -100,11 +106,11 @@ const Hadder = ({ type }) => {
                 </span>
                 {openDate && (
                   <DateRange
-                    editableDateInputs
+                    editableDateInputs={true}
                     onChange={(item) => setDates([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={dates}
-                    className="absolute top-20 z-20"
+                    className="absolute top-16 z-20"
                     minDate={new Date()}
                   />
                 )}
@@ -113,7 +119,9 @@ const Hadder = ({ type }) => {
                 <div
                   onClick={() => setOpenOptions(!openOptions)}
                   className="cursor-pointer text-gray-500"
-                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</div>
+                >
+                  {`${options.adult} adult · ${options.children} children · ${options.room} room`}
+                </div>
                 {openOptions && (
                   <div className="absolute top-12 bg-white text-gray-600 shadow-lg rounded-lg p-4 z-20">
                     <div className="flex justify-between mb-2">
