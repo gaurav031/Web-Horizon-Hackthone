@@ -5,7 +5,6 @@ import Home from './pages/Home';
 
 import Login from './pages/Login';
 import Signup from './pages/SignUp';
-
 import List from './pages/List';
 import HotelPage from './pages/HotelPage';
 import Book from './pages/Book';
@@ -19,11 +18,7 @@ function App() {
 
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
-=======
-      <Route path="/signup" element={<Signup/>} />
->>>>>>> 10e5d43a71f85bee7580f19227c5684a3c43c551
-      <Route path="/" element={<Home/>}/>
+      <Route path="/signup" element={<Signup />} />
       <Route path="/hotels" element={<List/>}/> 
       <Route path="/hotelpage" element={<HotelPage/>}/> 
       <Route path="/book" element={<Book/>}/> 
