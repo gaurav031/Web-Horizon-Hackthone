@@ -5,7 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6"; // Add this line
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+ 
 import { Link } from "react-router-dom";
+
+
 const Signup = () => {
   const [email, setEmail] = useState(""); // State for email
   const [password, setPassword] = useState(""); // State for password

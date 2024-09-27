@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-gray-100 h-16 flex justify-between items-center border-b transition-colors duration-300 px-4">
+    <div className="bg-white h-16 flex justify-between items-center border-b transition-colors duration-300 px-4">
       {/* Logo */}
       <Link to="/" className="no-underline">
         <img src="https://i.im.ge/2024/09/27/kdlet6.logo-removebg-preview.png" alt="logo" className="w-34 h-12" />
