@@ -3,12 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
+import { useNavigate } from "react-router-dom";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+
 
 const Hadder = ({ type }) => {
-  const navigate = useNavigate();
+
+    const navigate = useNavigate();
+
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
@@ -33,7 +36,8 @@ const Hadder = ({ type }) => {
   };
 
   const handleSearch = () => {
-    navigate("/hotels");
+
+    navigate('/hotels')
     console.log("Search:", { destination, dates, options });
   };
 
