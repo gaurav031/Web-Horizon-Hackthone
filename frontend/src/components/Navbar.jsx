@@ -2,16 +2,24 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="bg-blue-800 h-12 flex justify-center">
-      <div className="w-full max-w-5xl text-white flex items-center justify-between px-4">
-        <Link to="/" className="text-white no-underline">
-          <span className="font-medium text-xl">lamabooking</span>
+    <div className="bg-white h-16 flex justify-center border-b transition-colors duration-300">
+      <div className="w-full max-w-6xl flex items-center justify-between px-4">
+        {/* Logo */}
+        <Link to="/" className="no-underline">
+          <span className="font-semibold text-2xl text-black">
+            lamabooking
+          </span>
         </Link>
-        <div className="space-x-4">
-          <button className="px-4 py-1 bg-white text-blue-800 rounded-md">
+
+        {/* Right-side buttons */}
+        <div className="flex items-center space-x-4">
+          {/* Register Button */}
+          <button className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300">
             Register
           </button>
-          <button className="px-4 py-1 bg-white text-blue-800 rounded-md">
+
+          {/* Login Button */}
+          <button className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300">
             Login
           </button>
         </div>
