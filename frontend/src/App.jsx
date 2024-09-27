@@ -4,6 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 
 import Login from './pages/Login';
+import Signup from './pages/SignUp';
 
 import List from './pages/List';
 import HotelPage from './pages/HotelPage';
@@ -18,6 +19,10 @@ function App() {
 
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+<<<<<<< HEAD
+=======
+      <Route path="/signup" element={<Signup/>} />
+>>>>>>> 10e5d43a71f85bee7580f19227c5684a3c43c551
       <Route path="/" element={<Home/>}/>
       <Route path="/hotels" element={<List/>}/> 
       <Route path="/hotelpage" element={<HotelPage/>}/> 

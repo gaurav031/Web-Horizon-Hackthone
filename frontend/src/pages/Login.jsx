@@ -1,27 +1,26 @@
+// Login.js
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Logo from "../assets/logo.png";
 import GoogleSvg from "../assets/icons8-google.svg";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      {/* Form Container */}
       <div className="w-full max-w-md p-8 bg-white border border-gray-300 rounded-lg shadow-lg">
-        {/* Logo */}
         <div className="flex justify-center mb-8">
           <img src={Logo} alt="Logo" className="w-28 h-28" />
         </div>
 
-        {/* Welcome Text */}
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold">Welcome back!</h2>
           <p className="text-gray-500">Please enter your details</p>
         </div>
 
-        {/* Form */}
         <form>
           <div className="mb-4">
             <input
@@ -45,7 +44,6 @@ const Login = () => {
             </div>
           </div>
 
-          {/* Options */}
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center">
               <input
@@ -62,7 +60,6 @@ const Login = () => {
             </a>
           </div>
 
-          {/* Buttons */}
           <div className="flex flex-col gap-3">
             <button
               type="button"
@@ -80,10 +77,13 @@ const Login = () => {
           </div>
         </form>
 
-        {/* Sign Up Link */}
         <p className="mt-6 text-center text-gray-500">
           Don't have an account?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <a 
+            href="#" 
+            className="text-blue-500 hover:underline"
+            onClick={() => navigate('/signup')} // Navigate to Signup page
+          >
             Sign Up
           </a>
         </p>
