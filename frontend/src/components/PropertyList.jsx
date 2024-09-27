@@ -13,13 +13,25 @@ const PropertyList = () => {
   const counts = [233, 524, 412, 234, 129];
 
   return (
-    <div className="flex flex-wrap justify-between gap-5 max-w-6xl mx-auto">
+    <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
       {images.map((img, i) => (
-        <div className="flex-1 rounded-lg overflow-hidden cursor-pointer" key={i}>
-          <img src={img} alt={types[i]} className="w-full h-40 object-cover" />
-          <div className="p-4">
-            <h1 className="text-lg font-semibold capitalize text-gray-700">{types[i]}</h1>
-            <h2 className="text-sm font-light text-gray-500">{counts[i]} {types[i]}</h2>
+        <div
+          className="relative flex-1 rounded-lg overflow-hidden shadow-lg transition-all duration-300 ease-in-out cursor-pointer"
+          key={i}
+        >
+          <img
+            src={img}
+            alt={types[i]}
+            className="w-full h-56 object-cover transition duration-300 ease-in-out hover:brightness-90"
+          />
+          <div className="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition-opacity duration-300 ease-in-out" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90">
+            <h1 className="text-lg font-bold capitalize text-gray-800">{types[i]}</h1>
+            <h2 className="text-sm font-light text-gray-600">{counts[i]} {types[i]}</h2>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black opacity-80 transform translate-y-full transition-transform duration-300 ease-in-out hover:translate-y-0">
+            <h1 className="text-lg font-bold text-white">{types[i]}</h1>
+            <h2 className="text-sm font-light text-gray-300">{counts[i]} {types[i]}</h2>
           </div>
         </div>
       ))}

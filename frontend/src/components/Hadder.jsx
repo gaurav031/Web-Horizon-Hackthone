@@ -38,7 +38,7 @@ const Hadder = ({ type }) => {
   };
 
   return (
-    <div className="bg-slate-200 text-black flex justify-center relative h-[350px] mb-[100px]">
+    <div className="bg-slate-200 text-black flex justify-center relative h-[285px] mb-[40px]">
       <div className={`w-full max-w-6xl ${type === "list" ? "my-5" : "my-10"}`}>
         <div className="flex gap-10 mb-12">
           <div className="flex items-center gap-2 border border-white p-2 rounded-full">
@@ -71,9 +71,7 @@ const Hadder = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free booking account
             </p>
-            <button className="bg-blue-700 text-white py-2 px-4 font-semibold rounded-lg mb-6">
-              Sign in / Register
-            </button>
+
             <div className="bg-white text-black border-4 border-yellow-400 flex items-center justify-between py-4 px-5 rounded-lg">
               <div className="flex items-center gap-2">
                 <FontAwesomeIcon icon={faBed} className="text-gray-500" />
