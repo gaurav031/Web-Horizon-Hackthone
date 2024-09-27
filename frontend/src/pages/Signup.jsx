@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa6"; // Add this line
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
- 
-import { Link } from "react-router-dom";
+
 
 
 const Signup = () => {

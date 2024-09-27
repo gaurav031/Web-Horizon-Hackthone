@@ -9,6 +9,8 @@ import List from './pages/List';
 import HotelPage from './pages/HotelPage';
 import Book from './pages/Book';
 import BerlinPage from './Listing/BerlinPage';
+import OfferPage from './pages/OfferPage';
+import CustomerCarePage from './pages/CustomerCarePage';
 
 
 
@@ -24,6 +26,8 @@ function App() {
       <Route path="/hotelpage" element={<HotelPage/>}/> 
       <Route path="/book" element={<Book/>}/> 
       <Route path="/berlin" element={<BerlinPage/>}/> 
+      <Route path="/offer" element={<OfferPage/>}/> 
+      <Route path="/customercare" element={<CustomerCarePage/>}/> 
       
        {/*<Route path="/hotels/:id" element={<Hotel/>}/>
 
