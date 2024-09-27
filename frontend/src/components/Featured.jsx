@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 const Featured = () => {
   const navigate = useNavigate();
 
-  const handleSearch = (city) => {
-    navigate(`/${city.toLowerCase()}`);
+  const handleSearch = () => {
+    navigate('/berlin');
   };
 
   // Static data for cities and properties
@@ -23,7 +23,8 @@ const Featured = () => {
           <div
             key={index}
             className={`relative text-white rounded-lg overflow-hidden h-64 flex-1 group cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:bg-black ${index === 0 ? 'mt-4 sm:mt-0' : ''}`}
-            onClick={() => handleSearch(item.city)}
+            onClick={handleSearch}
+
           >
             <img
               src={

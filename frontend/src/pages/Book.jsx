@@ -1,13 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Book = () => {
     return (
         <>
             <Navbar />
-            <div className="p-6 bg-gray-100">
-                    <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <div className="p-6 bg-gray-100 ">
+                    <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg  mt-20">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="col-span-1">
                                 <div className="border p-4 rounded-lg">
@@ -141,7 +142,10 @@ const Book = () => {
                                     </p>
                                     <a href="#" className="text-blue-600">Add Request</a>
                                 </div>
+                                <Link to='/trip' >
                                 <button className="w-full bg-orange-500 text-white p-4 rounded-lg font-bold">Book Now</button>
+
+                                </Link>
                             </div>
                         </div>
                     </div>

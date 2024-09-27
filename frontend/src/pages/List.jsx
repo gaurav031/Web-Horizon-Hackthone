@@ -16,10 +16,10 @@ const List = () => {
         <div className="bg-gray-100 font-sans min-h-screen flex flex-col">
             <Navbar />
             <Hadder />
-            <div className="container mx-auto p-6 flex-grow">
+            <div className="container mx-auto p-6 flex-grow ">
                 <div className="flex flex-col md:flex-row h-full">
                     {/* Filters Section */}
-                    <div className="w-full md:w-1/4 bg-white p-4 rounded shadow-md mb-6 md:mb-0">
+                    <div className="w-full md:w-1/4 bg-white p-4 rounded shadow-md mb-6 md:mb-0 ">
                         <h2 className="text-lg font-bold mb-4">Filters</h2>
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Most Popular</h3>
@@ -100,8 +100,8 @@ const List = () => {
 
                         {/* Hotel Listing */}
                         {hotel.map((hotels) => (
-                            <div className="bg-white rounded shadow-md flex mb-4 p-4" key={hotels.id}>
-                                <div className="relative w-1/3">
+                            <div className="bg-white rounded shadow-md flex flex-col sm:flex-row mb-4 p-4" key={hotels.id}>
+                                <div className="relative w-full sm:w-1/3 mb-4 sm:mb-0">
                                     <img
                                         src={hotels.image}
                                         alt="Hotel lobby with reception desk and seating area"
@@ -128,7 +128,7 @@ const List = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="w-2/3 p-4">
+                                <div className="w-full sm:w-2/3 p-4">
                                     <div className="flex justify-between items-start">
                                         <div>
                                             <h2 className="text-xl font-bold">{hotels.name}<span className="text-gray-500">★★★★☆</span></h2>
@@ -154,6 +154,7 @@ const List = () => {
                                 </div>
                             </div>
                         ))}
+
                     </div>
                 </div>
             </div>
