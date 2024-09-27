@@ -21,23 +21,12 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-<<<<<<< HEAD
       <Route path="/hotels" element={<List />} />
       <Route path="/hotelpage" element={<HotelPage />} />
       <Route path="/book" element={<Book />} />
       <Route path="/berlin" element={<BerlinPage />} />
 
       {/*<Route path="/hotels/:id" element={<Hotel/>}/>
-=======
-      <Route path="/hotels" element={<List/>}/> 
-      <Route path="/hotelpage" element={<HotelPage/>}/> 
-      <Route path="/book" element={<Book/>}/> 
-      <Route path="/berlin" element={<BerlinPage/>}/> 
-      <Route path="/offer" element={<OfferPage/>}/> 
-      <Route path="/customercare" element={<CustomerCarePage/>}/> 
-      
-       {/*<Route path="/hotels/:id" element={<Hotel/>}/>
->>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
 
       <Route path="/login" element={<Login/>}/> */}
     </Routes >

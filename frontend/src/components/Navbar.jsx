@@ -24,16 +24,8 @@ const Navbar = () => {
     window.location.reload(); // Reload the page to reflect the changes
   };
 
-  const handleLinkClick = () => {
-    setIsOpen(false); // Close menu when a link is clicked
-  };
-
   return (
-<<<<<<< HEAD
-    <div className="bg-gray-100 h-16 flex justify-between items-center border-b transition-colors duration-300 px-4 relative z-50">
-=======
     <div className="bg-white h-16 fixed top-0 left-0 w-full flex justify-between items-center shadow-md px-4 z-50 transition-all duration-300">
->>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
       {/* Logo */}
       <Link to="/" className="no-underline">
         <img
@@ -46,20 +38,10 @@ const Navbar = () => {
       {/* Hamburger icon for mobile view */}
       <button
         onClick={toggleMenu}
-<<<<<<< HEAD
-        className="md:hidden flex items-center px-2 py-1 rounded focus:outline-none"
-        aria-controls="mobile-menu" // Accessibility: controls the menu
-        aria-expanded={isOpen} // Accessibility: indicates if the menu is open
-      >
-        {/* SVG icon for the hamburger menu */}
-        <svg
-          className="w-6 h-6"
-=======
         className="md:hidden flex items-center px-2 py-1 rounded focus:outline-none transition-all duration-300"
       >
         <svg
           className="w-6 h-6 text-gray-800"
->>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -76,36 +58,19 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <div
-<<<<<<< HEAD
-        id="mobile-menu"
-        className={`md:flex md:items-center bg-gray-100 transition-all duration-300 ease-in-out absolute top-16 left-0 w-full ${isOpen ? "flex z-50" : "hidden"
-          }`}
-      >
-        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 p-4 md:p-0 w-full">
-          <Link
-            to={"/offers"}
-            className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-bold"
-            onClick={handleLinkClick} // Close menu on link click
-=======
-        className={`flex-col md:flex md:flex-row md:items-center absolute md:static bg-white md:bg-transparent shadow-md md:shadow-none transition-all duration-300 ${isOpen ? "top-16 left-0 w-full" : "top-[-300px]"} md:top-0 md:w-auto md:space-x-4`}
+        className={`flex-col md:flex md:flex-row md:items-center absolute md:static bg-white md:bg-transparent shadow-md md:shadow-none transition-all duration-300 ${isOpen ? "top-16 left-0 w-full" : "top-[-300px]"
+          } md:top-0 md:w-auto md:space-x-4`}
       >
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 p-4 md:p-0">
           <Link
             to="/offer"
             className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-semibold"
->>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
           >
             Offers
           </Link>
           <Link
-<<<<<<< HEAD
-            to={"/customer-service"}
-            className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-bold"
-            onClick={handleLinkClick} // Close menu on link click
-=======
             to="/customercare"
             className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all duration-300 font-semibold"
->>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
           >
             Customer Service
           </Link>
@@ -134,14 +99,8 @@ const Navbar = () => {
             </div>
           ) : (
             <Link
-<<<<<<< HEAD
-              to={"/login"}
-              className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300"
-              onClick={handleLinkClick} // Close menu on link click
-=======
               to="/login"
               className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 font-semibold"
->>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
             >
               Sign in / Register
             </Link>
