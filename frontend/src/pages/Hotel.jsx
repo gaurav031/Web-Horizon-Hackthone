@@ -9,4 +9,3 @@ const Hotel = () => {
 }
 
 export default Hotel
-hotel
