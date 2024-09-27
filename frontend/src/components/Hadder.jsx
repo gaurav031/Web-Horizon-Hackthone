@@ -43,7 +43,7 @@ const Hadder = () => {
         <h1 className="text-4xl font-bold mt-6">A lifetime of discounts? It's Genius.</h1>
         <p className="mt-4">Get rewarded for your travels – unlock instant savings of 10% or more with a free Lamabooking account</p>
         <button className="bg-white text-blue-500 px-4 py-2 rounded mt-4">Sign in / Register</button>
-        
+
         <div className="mt-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
           <div className="flex-1">
             <input
