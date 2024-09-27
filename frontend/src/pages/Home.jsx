@@ -14,11 +14,15 @@ const Home = () => {
       <Hadder />
       <div className="homeContainer max-w-7xl mx-auto p-4">
         <h1 className="homeTitle text-3xl font-bold text-gray-800 my-8 text-center">Dream Places</h1>
+
         <Featured />
+
         <h1 className="homeTitle text-3xl font-bold text-gray-800 my-8 text-center">Browse by property type</h1>
         <PropertyList />
+
         <h1 className="homeTitle text-3xl font-bold text-gray-800 my-8 text-center">Homes guests love</h1>
         <FeaturedProperties />
+
         <MailList />
       </div>
       <Footer />
