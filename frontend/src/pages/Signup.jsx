@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Ensure this is only imported once
 import { Link, useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+=======
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+
+>>>>>>> 5de624486c29862038c63c66e03ebdc296bba2fc
 
 const Signup = () => {
   const [email, setEmail] = useState(""); // State for email
