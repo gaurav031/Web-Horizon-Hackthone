@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import Logo from "../assets/logo.png";
 import GoogleSvg from "../assets/icons8-google.svg";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState(""); // State for email
@@ -27,7 +29,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <>
+    <Navbar />
+      <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white border border-gray-300 rounded-lg shadow-lg">
         <div className="flex justify-center mb-8">
           <img src={Logo} alt="Logo" className="w-28 h-28" />
@@ -110,6 +114,9 @@ const Login = () => {
         </p>
       </div>
     </div>
+    <Footer />
+    </>
+  
   );
 };
 

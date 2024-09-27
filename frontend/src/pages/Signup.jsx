@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa6"; // Add this line
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 const Signup = () => {
   const [email, setEmail] = useState(""); // State for email
   const [password, setPassword] = useState(""); // State for password
@@ -26,7 +29,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
+    <>
+    <Navbar />
+     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white border border-gray-300 rounded-lg shadow-lg">
         <div className="flex justify-center mb-8">
           <img src={Logo} alt="Logo" className="w-28 h-28" />
@@ -91,6 +96,9 @@ const Signup = () => {
         </p>
       </div>
     </div>
+    <Footer />
+    </>
+   
   );
 };
 
