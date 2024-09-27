@@ -1,151 +1,187 @@
-import React, { useState } from 'react';
-import { DateRange } from 'react-date-range';
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
+import { faBed, faCalendarDays, faCar, faPerson, faPlane, faTaxi } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { format } from "date-fns";
 
-const Hadder = () => {
+const Hadder = ({ type }) => {
+  const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
-  const [dates, setDates] = useState([{
-    startDate: new Date(),
-    endDate: new Date(),
-    key: 'selection'
-  }]);
+  const [dates, setDates] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
-    room: 1
+    room: 1,
   });
 
   const handleOption = (name, operation) => {
-    setOptions(prev => {
-      return {
-        ...prev,
-        [name]: operation === 'i' ? options[name] + 1 : options[name] - 1,
-      };
-    });
+    setOptions((prev) => ({
+      ...prev,
+      [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+    }));
   };
 
   const handleSearch = () => {
-    console.log("Search clicked");
+    console.log("Search:", { destination, dates, options });
   };
 
   return (
-    <div className="bg-blue-500 p-6 text-white">
-      <div className="container mx-auto">
-        <div className="flex space-x-6">
-          <div className="cursor-pointer hover:text-gray-300">Stays</div>
-          <div className="cursor-pointer hover:text-gray-300">Flights</div>
-          <div className="cursor-pointer hover:text-gray-300">Car rentals</div>
-          <div className="cursor-pointer hover:text-gray-300">Attractions</div>
-          <div className="cursor-pointer hover:text-gray-300">Airport taxis</div>
+    <div className="bg-blue-900 text-white flex justify-center relative">
+      <div className={`w-full max-w-6xl ${type === "list" ? "my-5" : "my-10"}`}>
+        <div className="flex gap-10 mb-12">
+          <div className="flex items-center gap-2 border border-white p-2 rounded-full">
+            <FontAwesomeIcon icon={faBed} />
+            <span>Stays</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faPlane} />
+            <span>Flights</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faCar} />
+            <span>Car rentals</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faBed} />
+            <span>Attractions</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faTaxi} />
+            <span>Airport taxis</span>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold mt-6">A lifetime of discounts? It's Genius.</h1>
-        <p className="mt-4">Get rewarded for your travels – unlock instant savings of 10% or more with a free Lamabooking account</p>
-        <button className="bg-white text-blue-500 px-4 py-2 rounded mt-4">Sign in / Register</button>
-        
-        <div className="mt-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Where are you going?"
-              className="w-full p-2 rounded-md text-black"
-            />
-          </div>
-          <div className="flex-1 relative">
-            <span
-              onClick={() => setOpenDate(!openDate)}
-              className="cursor-pointer p-2 bg-white text-blue-500 rounded-md inline-block"
-            >
-              {`${dates[0].startDate.toLocaleDateString()} to ${dates[0].endDate.toLocaleDateString()}`}
-            </span>
-            {openDate && (
-              <DateRange
-                editableDateInputs={true}
-                onChange={(item) => setDates([item.selection])}
-                moveRangeOnFirstSelection={false}
-                ranges={dates}
-                className="absolute top-12"
-                minDate={new Date()}
-              />
-            )}
-          </div>
-          <div className="flex-1 relative">
-            <span
-              onClick={() => setOpenOptions(!openOptions)}
-              className="cursor-pointer p-2 bg-white text-blue-500 rounded-md inline-block"
-            >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
-            {openOptions && (
-              <div className="absolute top-12 bg-white text-black p-4 rounded-md shadow-lg">
-                <div className="flex justify-between items-center">
-                  <span>Adult</span>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      disabled={options.adult <= 1}
-                      onClick={() => handleOption('adult', 'd')}
-                      className="px-2 py-1 bg-gray-200 text-gray-800 rounded"
-                    >
-                      -
-                    </button>
-                    <span>{options.adult}</span>
-                    <button
-                      onClick={() => handleOption('adult', 'i')}
-                      className="px-2 py-1 bg-gray-200 text-gray-800 rounded"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center mt-2">
-                  <span>Children</span>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      disabled={options.children <= 0}
-                      onClick={() => handleOption('children', 'd')}
-                      className="px-2 py-1 bg-gray-200 text-gray-800 rounded"
-                    >
-                      -
-                    </button>
-                    <span>{options.children}</span>
-                    <button
-                      onClick={() => handleOption('children', 'i')}
-                      className="px-2 py-1 bg-gray-200 text-gray-800 rounded"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center mt-2">
-                  <span>Room</span>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      disabled={options.room <= 1}
-                      onClick={() => handleOption('room', 'd')}
-                      className="px-2 py-1 bg-gray-200 text-gray-800 rounded"
-                    >
-                      -
-                    </button>
-                    <span>{options.room}</span>
-                    <button
-                      onClick={() => handleOption('room', 'i')}
-                      className="px-2 py-1 bg-gray-200 text-gray-800 rounded"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="flex-1">
-            <button
-              onClick={handleSearch}
-              className="w-full p-2 bg-white text-blue-500 rounded-md"
-            >
-              Search
+        {type !== "list" && (
+          <>
+            <h1 className="text-4xl font-bold mb-4">
+              A lifetime of discounts? It's Genius.
+            </h1>
+            <p className="mb-8">
+              Get rewarded for your travels – unlock instant savings of 10% or
+              more with a free booking account
+            </p>
+            <button className="bg-blue-700 text-white py-2 px-4 font-semibold rounded-lg mb-6">
+              Sign in / Register
             </button>
-          </div>
-        </div>
+            <div className="bg-white text-black border-4 border-yellow-400 flex items-center justify-between py-4 px-5 rounded-lg">
+              <div className="flex items-center gap-2">
+                <FontAwesomeIcon icon={faBed} className="text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="Where are you going?"
+                  className="outline-none"
+                  onChange={(e) => setDestination(e.target.value)}
+                />
+              </div>
+              <div className="flex items-center gap-2">
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  className="text-gray-500"
+                />
+                <span
+                  onClick={() => setOpenDate(!openDate)}
+                  className="text-gray-500 cursor-pointer"
+                >
+                  {`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(
+                    dates[0].endDate,
+                    "MM/dd/yyyy"
+                  )}`}
+                </span>
+                {openDate && (
+                  <DateRange
+                    editableDateInputs
+                    onChange={(item) => setDates([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={dates}
+                    className="absolute top-20 z-20"
+                    minDate={new Date()}
+                  />
+                )}
+              </div>
+              <div className="relative">
+                <div
+                  onClick={() => setOpenOptions(!openOptions)}
+                  className="cursor-pointer text-gray-500"
+                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</div>
+                {openOptions && (
+                  <div className="absolute top-12 bg-white text-gray-600 shadow-lg rounded-lg p-4 z-20">
+                    <div className="flex justify-between mb-2">
+                      <span>Adult</span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          disabled={options.adult <= 1}
+                          onClick={() => handleOption("adult", "d")}
+                          className="w-8 h-8 border border-blue-500 text-blue-500"
+                        >
+                          -
+                        </button>
+                        <span>{options.adult}</span>
+                        <button
+                          onClick={() => handleOption("adult", "i")}
+                          className="w-8 h-8 border border-blue-500 text-blue-500"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span>Children</span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          disabled={options.children <= 0}
+                          onClick={() => handleOption("children", "d")}
+                          className="w-8 h-8 border border-blue-500 text-blue-500"
+                        >
+                          -
+                        </button>
+                        <span>{options.children}</span>
+                        <button
+                          onClick={() => handleOption("children", "i")}
+                          className="w-8 h-8 border border-blue-500 text-blue-500"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span>Room</span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          disabled={options.room <= 1}
+                          onClick={() => handleOption("room", "d")}
+                          className="w-8 h-8 border border-blue-500 text-blue-500"
+                        >
+                          -
+                        </button>
+                        <span>{options.room}</span>
+                        <button
+                          onClick={() => handleOption("room", "i")}
+                          className="w-8 h-8 border border-blue-500 text-blue-500"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <button
+                onClick={handleSearch}
+                className="bg-blue-700 text-white py-2 px-4 font-semibold rounded-lg"
+              >
+                Search
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
