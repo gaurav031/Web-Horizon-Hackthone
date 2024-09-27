@@ -2,12 +2,8 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa6"; // Add this line
-<<<<<<< HEAD
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-=======
-import { Link } from "react-router-dom";
->>>>>>> 0246868adba5f4a0881e1a1541cf85be2d31f358
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
