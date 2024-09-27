@@ -4,6 +4,7 @@ import Hadder from '../components/Hadder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faChevronLeft, faChevronRight, faCheck, faUtensils, faConciergeBell } from '@fortawesome/free-solid-svg-icons';
 import { hotel } from '../data/hotel';
+import Footer from '../components/Footer';
 
 const List = () => {
     return (
@@ -159,6 +160,7 @@ const List = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
