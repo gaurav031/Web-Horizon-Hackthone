@@ -1,6 +1,6 @@
 // Login.js
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import Logo from "../assets/logo.png";
 import GoogleSvg from "../assets/icons8-google.svg";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
@@ -83,13 +83,12 @@ const Login = () => {
 
         <p className="mt-6 text-center text-gray-500">
           Don't have an account?{" "}
-          <a 
-            href="#" 
+          <Link
+            to="/signup"
             className="text-blue-500 hover:underline"
-            onClick={() => navigate('/signup')} // Navigate to Signup page
           >
             Sign Up
-          </a>
+          </Link>
         </p>
       </div>
     </div>
