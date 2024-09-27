@@ -1,6 +1,12 @@
 import React from "react";
+import {  useNavigate } from "react-router-dom"; // Import useNavigate
 
 const FeaturedProperties = () => {
+  const navigate = useNavigate();
+  const handleSearch = () => {
+      navigate('/berlin')
+      
+    };
   // Static data for featured properties
   const data = [
     {
@@ -51,6 +57,7 @@ const FeaturedProperties = () => {
         <div
           className="flex-1 flex flex-col rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out transform cursor-pointer hover:shadow-xl"
           key={item._id}
+          onClick={handleSearch}
         >
           <div className="relative">
             <img

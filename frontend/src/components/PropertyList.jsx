@@ -1,6 +1,12 @@
 import React from "react";
+import {  useNavigate } from "react-router-dom"; // Import useNavigate
 
 const PropertyList = () => {
+  const navigate = useNavigate();
+  const handleSearch = () => {
+      navigate('/berlin')
+      
+    };
   const images = [
     "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
     "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg",
@@ -18,6 +24,8 @@ const PropertyList = () => {
         <div
           className="relative flex-1 rounded-lg overflow-hidden shadow-lg transition-all duration-300 ease-in-out cursor-pointer"
           key={i}
+          onClick={handleSearch}
+
         >
           <img
             src={img}
