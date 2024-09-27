@@ -46,24 +46,30 @@ const FeaturedProperties = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-between gap-5 max-w-6xl mx-auto">
+    <div className="flex flex-wrap justify-between gap-6 max-w-6xl mx-auto">
       {data.map((item) => (
-        <div className="flex-1 flex flex-col gap-2 rounded-lg overflow-hidden shadow-md" key={item._id}>
-          <img
-            src={item.photos[0]}
-            alt={item.name}
-            className="w-full h-64 object-cover"
-          />
-          <div className="p-4">
+        <div
+          className="flex-1 flex flex-col rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out transform cursor-pointer hover:shadow-xl"
+          key={item._id}
+        >
+          <div className="relative">
+            <img
+              src={item.photos[0]}
+              alt={item.name}
+              className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-80"
+            />
+            <div className="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition-opacity duration-300 ease-in-out" />
+          </div>
+          <div className="p-4 bg-white transition-colors duration-300 ease-in-out">
             <span className="text-lg font-bold text-gray-800">{item.name}</span>
-            <span className="text-gray-600">{item.city}</span>
+            <span className="block text-gray-600">{item.city}</span>
             <span className="text-md font-semibold">Starting from ${item.cheapestPrice}</span>
             {item.rating && (
               <div className="flex items-center mt-2">
-                <button className="bg-blue-800 text-white py-1 px-2 rounded-md mr-2 font-bold">
+                <button className="bg-blue-800 text-white py-1 px-2 rounded-md mr-2 font-bold transition-colors duration-300 ease-in-out hover:bg-blue-600">
                   {item.rating}
                 </button>
-                <span className="text-sm">Excellent</span>
+                <span className="text-sm text-gray-500">Excellent</span>
               </div>
             )}
           </div>
