@@ -13,32 +13,22 @@ const List = () => {
         
       };
     return (
-        <div className="bg-gray-100 font-sans">
+        <div className="bg-gray-100 font-sans min-h-screen flex flex-col">
             <Navbar />
             <Hadder />
-            <div className="container mx-auto p-4">
-                <div className="flex">
+            <div className="container mx-auto p-6 flex-grow">
+                <div className="flex flex-col md:flex-row h-full">
                     {/* Filters Section */}
-                    <div className="w-1/4 bg-white p-4 rounded shadow">
+                    <div className="w-full md:w-1/4 bg-white p-4 rounded shadow-md mb-6 md:mb-0">
                         <h2 className="text-lg font-bold mb-4">Filters</h2>
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Most Popular</h3>
-                            <div className="flex items-center mb-2">
-                                <input className="mr-2" id="free-cancellation" type="checkbox" />
-                                <label htmlFor="free-cancellation">Free Cancellation</label>
-                            </div>
-                            <div className="flex items-center mb-2">
-                                <input className="mr-2" id="free-breakfast" type="checkbox" />
-                                <label htmlFor="free-breakfast">Free Breakfast</label>
-                            </div>
-                            <div className="flex items-center mb-2">
-                                <input className="mr-2" id="rated-exceptional" type="checkbox" />
-                                <label htmlFor="rated-exceptional">Rated Exceptional (9+)</label>
-                            </div>
-                            <div className="flex items-center mb-2">
-                                <input className="mr-2" id="parking-available" type="checkbox" />
-                                <label htmlFor="parking-available">Parking Available</label>
-                            </div>
+                            {['Free Cancellation', 'Free Breakfast', 'Rated Exceptional (9+)', 'Parking Available'].map((label, index) => (
+                                <div className="flex items-center mb-2" key={index}>
+                                    <input className="mr-2" id={`filter-${index}`} type="checkbox" />
+                                    <label htmlFor={`filter-${index}`}>{label}</label>
+                                </div>
+                            ))}
                         </div>
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Price</h3>
@@ -57,10 +47,10 @@ const List = () => {
                         {/* Facilities Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Facilities</h3>
-                            {['room-service', 'cctv-security', 'non-smoking-rooms'].map((facility) => (
-                                <div className="flex items-center mb-2" key={facility}>
+                            {['Room Service', 'CCTV Security', 'Non-Smoking Rooms'].map((facility, index) => (
+                                <div className="flex items-center mb-2" key={index}>
                                     <input className="mr-2" id={facility} type="checkbox" />
-                                    <label htmlFor={facility}>{facility.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</label>
+                                    <label htmlFor={facility}>{facility}</label>
                                 </div>
                             ))}
                         </div>
@@ -77,42 +67,45 @@ const List = () => {
                         {/* Accommodation Type Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Accommodation Type</h3>
-                            {['homestay', 'hotel', 'apartment', 'hostel', 'resort', 'guest-house'].map((type) => (
-                                <div className="flex items-center mb-2" key={type}>
+                            {['Homestay', 'Hotel', 'Apartment', 'Hostel', 'Resort', 'Guest House'].map((type, index) => (
+                                <div className="flex items-center mb-2" key={index}>
                                     <input className="mr-2" id={type} type="checkbox" />
-                                    <label htmlFor={type}>{type.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} (1)</label>
+                                    <label htmlFor={type}>{type} (1)</label>
                                 </div>
                             ))}
                         </div>
                         {/* Payment Mode Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Payment Mode</h3>
-                            {['pay-at-hotel', 'prepaid'].map((mode) => (
-                                <div className="flex items-center mb-2" key={mode}>
+                            {['Pay at Hotel', 'Prepaid'].map((mode, index) => (
+                                <div className="flex items-center mb-2" key={index}>
                                     <input className="mr-2" id={mode} type="checkbox" />
-                                    <label htmlFor={mode}>{mode.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</label>
+                                    <label htmlFor={mode}>{mode}</label>
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* Listings Section */}
-                    <div className="w-3/4 ml-4">
-                        <div className="flex justify-between items-center mb-4">
+                    <div className="w-100vw md:w-full ml-0 md:ml-4 overflow-y-auto" style={{ maxHeight: 'calc(210vh - 100px)' }}>
+                        <div className="flex justify-between items-center mb-4 pr-5">
                             <h2 className="text-xl font-bold">Your Hotels</h2>
-                            <select className="border rounded p-2">
+                            <select className="border rounded-lg p-2">
                                 <option>Popularity</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>User Rating</option>
                             </select>
                         </div>
 
-                        {/* Hotel listing */}
+                        {/* Hotel Listing */}
                         {hotel.map((hotels) => (
-                            <div className="flex mb-4" key={hotels.id}> {/* Add unique key here */}
+                            <div className="bg-white rounded shadow-md flex mb-4 p-4" key={hotels.id}>
                                 <div className="relative w-1/3">
                                     <img
                                         src={hotels.image}
                                         alt="Hotel lobby with reception desk and seating area"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover rounded-l"
                                     />
                                     <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">Last Minute Deal</div>
                                     <div className="absolute top-2 right-2 bg-white text-gray-500 rounded-full p-1">
@@ -125,12 +118,12 @@ const List = () => {
                                         <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
                                     </div>
                                     <div className="absolute inset-y-0 left-0 flex items-center">
-                                        <button className="bg-white text-gray-500 rounded-full p-1">
+                                        <button className="bg-white text-gray-500 rounded-full p-1 hover:bg-gray-200 transition">
                                             <FontAwesomeIcon icon={faChevronLeft} />
                                         </button>
                                     </div>
                                     <div className="absolute inset-y-0 right-0 flex items-center">
-                                        <button className="bg-white text-gray-500 rounded-full p-1">
+                                        <button className="bg-white text-gray-500 rounded-full p-1 hover:bg-gray-200 transition">
                                             <FontAwesomeIcon icon={faChevronRight} />
                                         </button>
                                     </div>
@@ -154,18 +147,24 @@ const List = () => {
                                             </div>
                                         </div>
                                         <div className="text-right">
+<<<<<<< HEAD
                                             <p className="text-lg font-bold">₹{hotels.price}</p>
                                             <span className="text-gray-500">per night</span>
                                             <button className="bg-blue-500 text-white rounded mt-2 p-2" onClick={handleSearch} >Book Now</button>
+=======
+                                            <p className="text-lg font-bold">₹{hotels.price} <span className="text-gray-500">per night</span></p>
+                                            <button className="bg-blue-500 text-white rounded mt-2 p-2 transition hover:bg-blue-600">Book Now</button>
+>>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
+
                 </div>
             </div>
-            <Footer />
+            <Footer className="fixed bottom-0 left-0 right-0" />
         </div>
     );
 };

@@ -18,11 +18,17 @@ function App() {
 
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+<<<<<<< HEAD
       <Route path="/" element={<Home/>}/>
       <Route path="/hotels" element={<List/>}/> 
       <Route path="/hotelpage" element={<HotelPage/>}/> 
       <Route path="/book" element={<Book/>}/> 
        {/*<Route path="/hotels/:id" element={<Hotel/>}/>
+=======
+      <Route path="/" element={<Home />} />
+      <Route path="/hotels" element={<List />} />
+      {/*<Route path="/hotels/:id" element={<Hotel/>}/>
+>>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
 
       <Route path="/login" element={<Login/>}/> */}
     </Routes>
