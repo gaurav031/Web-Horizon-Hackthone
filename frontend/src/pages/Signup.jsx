@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa6"; // Add this line
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,7 @@ const Signup = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          
+
           <div className="mb-4">
             <input
               type="email"
@@ -59,9 +60,9 @@ const Signup = () => {
 
         <p className="mt-6 text-center text-gray-500">
           Already have an account?{" "}
-          <a href="/" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Log In
-          </a>
+          </Link>
         </p>
       </div>
     </div>
