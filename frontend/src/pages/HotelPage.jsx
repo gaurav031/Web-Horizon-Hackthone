@@ -19,19 +19,13 @@ const HotelPage = () => {
           <div className="col-span-2">
             <img
               alt="Hotel room with a TV and wooden furniture"
-<<<<<<< HEAD
               className="w-full h-full object-cover rounded-lg"
               src="https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWx8ZW58MHx8MHx8fDA%3D"
-=======
-              className="w-full h-full object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
-              src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-x8urth6IRv1hHqrvfaJB4LJy.png?st=2024-09-27T07%3A41%3A25Z&se=2024-09-27T09%3A41%3A25Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png"
->>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
               alt="Hotel signboard"
-<<<<<<< HEAD
               className="w-full h-full object-cover rounded-lg"
               src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D"
             />
@@ -49,25 +43,6 @@ const HotelPage = () => {
               alt="Hotel bathroom"
               className="w-full h-full object-cover rounded-lg"
               src="https://plus.unsplash.com/premium_photo-1678297269980-16f4be3a15a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhvdGVsfGVufDB8fDB8fHww"
-=======
-              className="w-full h-full object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
-              src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-Bm5EgRTp8UfUEtvLGZ89V9ft.png?st=2024-09-27T07%3A41%3A22Z&se=2024-09-27T09%3A41%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png"
-            />
-            <img
-              alt="Hotel dining area"
-              className="w-full h-full object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
-              src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-4V7zB4je7WHCF1fZLrmtLiMf.png?st=2024-09-27T07%3A41%3A30Z&se=2024-09-27T09%3A41%3A30Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png"
-            />
-            <img
-              alt="Hotel bedroom"
-              className="w-full h-full object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
-              src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-euP5PYafgkngYYHErSSLEx04.png?st=2024-09-27T07%3A41%3A28Z&se=2024-09-27T09%3A41%3A28Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png"
-            />
-            <img
-              alt="Hotel bathroom"
-              className="w-full h-full object-cover rounded-lg shadow-md transition-transform transform hover:scale-105"
-              src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-BObQxPPMRQQbR16eDa6LBHDL.png?st=2024-09-27T07%3A41%3A27Z&se=2024-09-27T09%3A41%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png"
->>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
             />
           </div>
         </div>
@@ -136,13 +111,8 @@ const HotelPage = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold">Deluxe Double Room</h3>
                   <p className="text-gray-600">2 adults, 1 double bed</p>
-<<<<<<< HEAD
                   <p className="text-gray-600">$200 per night</p>
                   <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2"  onClick={handleSearch}>Book Now</button>
-=======
-                  <p className="text-gray-600 text-lg font-bold">$200 per night</p>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-blue-600 transition">Book Now</button>
->>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
                 </div>
               </div>
             </div>
@@ -157,13 +127,8 @@ const HotelPage = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold">Standard Single Room</h3>
                   <p className="text-gray-600">1 adult, 1 single bed</p>
-<<<<<<< HEAD
                   <p className="text-gray-600">$150 per night</p>
                   <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2"  onClick={handleSearch}>Book Now</button>
-=======
-                  <p className="text-gray-600 text-lg font-bold">$150 per night</p>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-blue-600 transition">Book Now</button>
->>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
                 </div>
               </div>
             </div>
@@ -178,13 +143,8 @@ const HotelPage = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold">Family Room</h3>
                   <p className="text-gray-600">4 adults, 1 double bed and 2 single beds</p>
-<<<<<<< HEAD
                   <p className="text-gray-600">$250 per night</p>
                   <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2"  onClick={handleSearch}>Book Now</button>
-=======
-                  <p className="text-gray-600 text-lg font-bold">$250 per night</p>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-blue-600 transition">Book Now</button>
->>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
                 </div>
               </div>
             </div>

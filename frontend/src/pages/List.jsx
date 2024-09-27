@@ -147,14 +147,9 @@ const List = () => {
                                             </div>
                                         </div>
                                         <div className="text-right">
-<<<<<<< HEAD
                                             <p className="text-lg font-bold">₹{hotels.price}</p>
                                             <span className="text-gray-500">per night</span>
                                             <button className="bg-blue-500 text-white rounded mt-2 p-2" onClick={handleSearch} >Book Now</button>
-=======
-                                            <p className="text-lg font-bold">₹{hotels.price} <span className="text-gray-500">per night</span></p>
-                                            <button className="bg-blue-500 text-white rounded mt-2 p-2 transition hover:bg-blue-600">Book Now</button>
->>>>>>> 846931089825e4c8ebd63458c6c44736956aec92
                                         </div>
                                     </div>
                                 </div>
