@@ -11,7 +11,7 @@ import { BerlinData } from '../data/hotel.js';
 // Renamed Berlin to BerlinPage to avoid conflict
 const BerlinPage = () => {
     const navigate = useNavigate();
-    
+
     const handleSearch = () => {
         navigate('/hotelpage');
     };
@@ -152,9 +152,8 @@ const BerlinPage = () => {
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-lg font-bold">₹{hotel.price}</p>
-                                            <span className="text-gray-500">per night</span>
-                                            <button className="bg-blue-500 text-white rounded mt-2 p-2" onClick={handleSearch} >Book Now</button>
+                                            <p className="text-lg font-bold"><span className="text-gray-500">per night </span>₹{hotel.price}</p>
+                                            <button className="bg-blue-500 text-white rounded mt-2 p-2" onClick={handleSearch}>Book Now</button>
                                         </div>
                                     </div>
                                 </div>

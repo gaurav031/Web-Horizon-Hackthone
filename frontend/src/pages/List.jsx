@@ -10,8 +10,8 @@ const List = () => {
     const navigate = useNavigate();
     const handleSearch = () => {
         navigate('/hotelpage')
-        
-      };
+
+    };
     return (
         <div className="bg-gray-100 font-sans min-h-screen flex flex-col">
             <Navbar />
@@ -147,16 +147,14 @@ const List = () => {
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-lg font-bold">₹{hotels.price}</p>
-                                            <span className="text-gray-500">per night</span>
-                                            <button className="bg-blue-500 text-white rounded mt-2 p-2" onClick={handleSearch} >Book Now</button>
+                                            <p className="text-lg font-bold">₹{hotels.price} <span className="text-gray-500">per night</span></p>
+                                            <button className="bg-blue-500 text-white rounded mt-2 p-2 transition hover:bg-blue-600">Book Now</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-
                 </div>
             </div>
             <Footer className="fixed bottom-0 left-0 right-0" />
