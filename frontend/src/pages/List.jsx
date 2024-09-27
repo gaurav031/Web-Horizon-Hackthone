@@ -5,8 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faChevronLeft, faChevronRight, faCheck, faUtensils, faConciergeBell } from '@fortawesome/free-solid-svg-icons';
 import { hotel } from '../data/hotel';
 import Footer from '../components/Footer';
-
+import { useNavigate } from "react-router-dom";
 const List = () => {
+    const navigate = useNavigate();
+    const handleSearch = () => {
+        navigate('/hotelpage')
+        
+      };
     return (
         <div className="bg-gray-100 font-sans min-h-screen flex flex-col">
             <Navbar />
@@ -142,8 +147,9 @@ const List = () => {
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-lg font-bold">₹{hotels.price} <span className="text-gray-500">per night</span></p>
-                                            <button className="bg-blue-500 text-white rounded mt-2 p-2 transition hover:bg-blue-600">Book Now</button>
+                                            <p className="text-lg font-bold">₹{hotels.price}</p>
+                                            <span className="text-gray-500">per night</span>
+                                            <button className="bg-blue-500 text-white rounded mt-2 p-2" onClick={handleSearch} >Book Now</button>
                                         </div>
                                     </div>
                                 </div>
