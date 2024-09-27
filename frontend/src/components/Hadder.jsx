@@ -1,44 +1,63 @@
-import React, { useState } from 'react';
-import { DateRange } from 'react-date-range';
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
+import { faBed, faCalendarDays, faCar, faPerson, faPlane, faTaxi } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
+import { format } from "date-fns";
 
-const Hadder = () => {
+const Hadder = ({ type }) => {
+  const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
-  const [dates, setDates] = useState([{
-    startDate: new Date(),
-    endDate: new Date(),
-    key: 'selection'
-  }]);
+  const [dates, setDates] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
-    room: 1
+    room: 1,
   });
 
   const handleOption = (name, operation) => {
-    setOptions(prev => {
-      return {
-        ...prev,
-        [name]: operation === 'i' ? options[name] + 1 : options[name] - 1,
-      };
-    });
+    setOptions((prev) => ({
+      ...prev,
+      [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+    }));
   };
 
   const handleSearch = () => {
-    console.log("Search clicked");
+    console.log("Search:", { destination, dates, options });
   };
 
   return (
-    <div className="bg-blue-500 p-6 text-white">
-      <div className="container mx-auto">
-        <div className="flex space-x-6">
-          <div className="cursor-pointer hover:text-gray-300">Stays</div>
-          <div className="cursor-pointer hover:text-gray-300">Flights</div>
-          <div className="cursor-pointer hover:text-gray-300">Car rentals</div>
-          <div className="cursor-pointer hover:text-gray-300">Attractions</div>
-          <div className="cursor-pointer hover:text-gray-300">Airport taxis</div>
+    <div className="bg-blue-900 text-white flex justify-center relative">
+      <div className={`w-full max-w-6xl ${type === "list" ? "my-5" : "my-10"}`}>
+        <div className="flex gap-10 mb-12">
+          <div className="flex items-center gap-2 border border-white p-2 rounded-full">
+            <FontAwesomeIcon icon={faBed} />
+            <span>Stays</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faPlane} />
+            <span>Flights</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faCar} />
+            <span>Car rentals</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faBed} />
+            <span>Attractions</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={faTaxi} />
+            <span>Airport taxis</span>
+          </div>
         </div>
         <h1 className="text-4xl font-bold mt-6">A lifetime of discounts? It's Genius.</h1>
         <p className="mt-4">Get rewarded for your travels – unlock instant savings of 10% or more with a free Lamabooking account</p>
