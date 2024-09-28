@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation(); // Initialize translation and i18n
-  const [isOpen, setIsOpen] = useState(false); // Controls mobile menu
+  const { t, i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const [showLangMenu, setShowLangMenu] = useState(false); // Controls language dropdown visibility
+  const [showLangMenu, setShowLangMenu] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language); // State to track selected language
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -25,13 +26,11 @@ const Navbar = () => {
     window.location.reload();
   };
 
-  // Language change handler
   const changeLanguage = (lng) => {
-    console.log("Selected language:", lng); // Debugging log
     i18n.changeLanguage(lng)
       .then(() => {
-        console.log(`Language changed to ${lng}`);
-        setShowLangMenu(false); // Close language dropdown after selection
+        setSelectedLanguage(lng); // Set selected language
+        setShowLangMenu(false);
       })
       .catch((error) => {
         console.error("Language change error:", error);
@@ -39,12 +38,11 @@ const Navbar = () => {
   };
 
   const toggleLangMenu = () => {
-    setShowLangMenu((prevState) => !prevState); // Toggle language dropdown
+    setShowLangMenu((prevState) => !prevState);
   };
 
   return (
     <div className="bg-white h-16 fixed top-0 left-0 w-full flex justify-between items-center shadow-md px-4 z-50">
-      {/* Logo */}
       <Link to="/" className="no-underline">
         <img
           src="https://i.im.ge/2024/09/27/kdlet6.logo-removebg-preview.png"
@@ -53,7 +51,6 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* Hamburger icon for mobile view */}
       <button
         onClick={toggleMenu}
         className="md:hidden flex items-center px-2 py-1 rounded focus:outline-none"
@@ -74,7 +71,6 @@ const Navbar = () => {
         </svg>
       </button>
 
-      {/* Navigation Links */}
       <div
         className={`flex-col md:flex md:flex-row md:items-center absolute md:static bg-white md:bg-transparent shadow-md md:shadow-none transition-all duration-300 ${isOpen ? "top-16 left-0 w-full" : "top-[-300px]"} md:top-0 md:w-auto md:space-x-4`}
       >
@@ -92,28 +88,24 @@ const Navbar = () => {
             {t("customerService")}
           </Link>
 
-          {/* Language Switcher */}
           <div className="relative">
             <button
               className="px-4 py-2 text-gray-600 font-semibold"
               onClick={toggleLangMenu}
             >
-              Language
+              {t("language")}
             </button>
             {showLangMenu && (
               <div className="absolute bg-white shadow-lg rounded mt-2 z-10">
-                <button
-                  onClick={() => changeLanguage("en")}
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  English
-                </button>
-                <button
-                  onClick={() => changeLanguage("hi")}
-                  className="block px-3 py-2 hover:bg-gray-200"
-                >
-                  Hindi
-                </button>
+                {["en", "hi", "fr", "es"].map((lng) => ( // Added French and Spanish
+                  <button
+                    key={lng}
+                    onClick={() => changeLanguage(lng)}
+                    className={`block px-4 py-2 hover:bg-gray-200 ${selectedLanguage === lng ? "font-bold text-blue-500" : ""}`} // Highlight selected language
+                  >
+                    {lng === "en" ? "English" : lng === "hi" ? "Hindi" : lng === "fr" ? "French" : "Spanish"}
+                  </button>
+                ))}
               </div>
             )}
           </div>
@@ -121,7 +113,6 @@ const Navbar = () => {
           {user ? (
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
               <div className="flex items-center space-x-2">
-                {/* Display user profile image or default icon */}
                 <Link to="/profile">
                   <img
                     src="https://i.im.ge/2024/09/27/kdlCkq.profile.jpeg"
@@ -129,8 +120,6 @@ const Navbar = () => {
                     className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
                   />
                 </Link>
-
-                {/* Display username */}
                 <span className="text-gray-700 font-bold">{user.user}</span>
               </div>
               <button
