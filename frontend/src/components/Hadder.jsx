@@ -26,6 +26,30 @@ const Hadder = ({ type }) => {
   });
   const [selectedOption, setSelectedOption] = useState("Stays");
 
+  const handleOptionClick = (label) => {
+    setSelectedOption(label);
+    // Redirect based on the selected option
+    switch (label) {
+      case "Stays":
+        navigate("/");
+        break;
+      case "Flights":
+        navigate("/flights");
+        break;
+      case "Car rentals":
+        navigate("/car-rentals");
+        break;
+      case "Attractions":
+        navigate("/attractions");
+        break;
+      case "Airport taxis":
+        navigate("/airport-taxis");
+        break;
+      default:
+        break;
+    }
+  };
+
   const handleOption = (name, operation) => {
     setOptions((prev) => ({
       ...prev,
@@ -59,7 +83,7 @@ const Hadder = ({ type }) => {
               key={option.label}
               className={`flex items-center gap-2 border p-2 rounded-full hover:cursor-pointer ${selectedOption === option.label ? "bg-blue-600 text-white" : "border-white"
                 }`}
-              onClick={() => setSelectedOption(option.label)}
+              onClick={() => handleOptionClick(option.label)} // Use the new function here
             >
               <FontAwesomeIcon icon={option.icon} />
               <span className="text-sm md:text-base">{option.label}</span>

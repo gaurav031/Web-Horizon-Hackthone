@@ -13,6 +13,12 @@ import CustomerCarePage from './pages/CustomerCarePage';
 import ProfilePage from './pages/ProfilePage';
 import TripPage from './pages/TripPage';
 
+import MoneyPage from './pages/MoneyPage';
+import ViewProfile from './pages/ViewProfile';
+import Flights from './pages/Flights';
+import CarRentals from './pages/CarRentals';
+import Attractions from './pages/Attractions';
+
 
 
 function App() {
@@ -31,6 +37,11 @@ function App() {
       <Route path="/customercare" element={<CustomerCarePage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/trip" element={<TripPage />} />
+      <Route path="/money" element={<MoneyPage />} />
+      <Route path="/viewprofile" element={<ViewProfile />} />
+      <Route path="/flights" element={<Flights />} />
+      <Route path="/car-rentals" element={<CarRentals />} />
+      <Route path="/attractions" element={<Attractions />} />
 
       {/*<Route path="/hotels/:id" element={<Hotel/>}/>
 

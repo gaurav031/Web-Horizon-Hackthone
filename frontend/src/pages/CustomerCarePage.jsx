@@ -27,7 +27,7 @@ const CustomerCarePage = () => {
             date="Fri, 10 Sep - 09:44 PM to Sat, 25 Sep"
             status="Partially Cancelled"
             statusColor="text-red-500"
-            image="https://images.ixigo.com/node_image/t_thumb/station_code/ADI.jpg"
+            image="https://i.im.ge/2024/09/28/kdGCTS.photo-2024-09-28-11-32-02.jpeg"
             alt="Train image"
           />
           <BookingCard
@@ -35,7 +35,7 @@ const CustomerCarePage = () => {
             date="Fri, 10 Sep - 09:44 PM to Sat, 25 Sep"
             status="Booking Successful"
             statusColor="text-green-500"
-            image="https://images.ixigo.com/node_image/t_thumb/station_code/ADI.jpg"
+            image="https://i.im.ge/2024/09/28/kdGCTS.photo-2024-09-28-11-32-02.jpeg"
             alt="Train image"
           />
           <BookingCard
@@ -43,7 +43,7 @@ const CustomerCarePage = () => {
             date="Mon, 29 Apr - 17:30 to Tue, 30 Apr"
             status="Booking Confirmed"
             statusColor="text-green-500"
-            image="https://images.ixigo.com/node_image/t_thumb/station_code/PNBE.jpg"
+            image="https://c8.alamy.com/comp/2J62Y15/vintage-steam-rail-engine-with-temple-and-blue-sky-background-at-day-image-is-taken-patna-college-patna-bihar-india-on-apr-15-2022-2J62Y15.jpg"
             alt="Train image"
           />
         </div>
@@ -63,7 +63,7 @@ const CustomerCarePage = () => {
       <footer className="text-xs text-gray-500">
         <p>Please note:</p>
         <p>
-          ixigo will never ask for any personal information like credit/debit card number, CVV, OTP, card expiry date, netbank, passwords, etc. through phone, email, SMS, or any other type of communication. Any such request is a scam. Please do not share your personal information with anyone.
+          Hotel Booking will never ask for any personal information like credit/debit card number, CVV, OTP, card expiry date, netbank, passwords, etc. through phone, email, SMS, or any other type of communication. Any such request is a scam. Please do not share your personal information with anyone.
         </p>
       </footer>
       <Footer />
@@ -88,11 +88,11 @@ const QuickGuide = () => {
       <h2 className="text-lg font-semibold mb-4">Quick Guide</h2>
       <div className="grid grid-cols-2 gap-4">
         <GuideItem icon="fas fa-user-cog" text="Account Settings" />
-        <GuideItem icon="fas fa-money-bill-wave" text="ixigo money" />
-        <GuideItem icon="fas fa-shield-alt" text="ixigo assured" />
-        <GuideItem icon="fas fa-credit-card" text="ixigo AU Credit Card" />
+        <GuideItem icon="fas fa-money-bill-wave" text="Hotel Booking money" />
+        <GuideItem icon="fas fa-shield-alt" text="Hotel Booking assured" />
+        <GuideItem icon="fas fa-credit-card" text="Hotel Booking AU Credit Card" />
         <GuideItem icon="fas fa-question-circle" text="Pre-booking Queries" />
-        <GuideItem icon="fas fa-money-check-alt" text="ixigo money max" />
+        <GuideItem icon="fas fa-money-check-alt" text="Hotel Booking money max" />
         <GuideItem icon="fas fa-wallet" text="Manage Payment Methods" />
       </div>
     </div>
@@ -135,20 +135,20 @@ const UnresolvedQuery = () => {
 const AboutIxigo = () => {
   return (
     <div className="bg-white p-4 rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold mb-4">About ixigo</h2>
+      <h2 className="text-lg font-semibold mb-4">About Hotel Booking</h2>
       <p className="text-gray-500 mb-4">
         Here's a compilation of all the travel queries you may have. We're pretty sure the answer to your question will be here. Just in case you don't see it, please use contact us option mentioned below and we will get back to you for your resolution.
       </p>
       <div className="border rounded-lg">
-        <AccordionItem question="What is ixigo?" />
+        <AccordionItem question="What is Hotel Booking?" />
         <AccordionItem question="What are your terms of use and privacy policy?" />
-        <AccordionItem question="How can I know about ixigo mobile apps?" />
-        <AccordionItem question="Why is ixigo different from other travel booking platforms?" />
+        <AccordionItem question="How can I know about Hotel Booking mobile apps?" />
+        <AccordionItem question="Why is Hotel Booking different from other travel booking platforms?" />
         <AccordionItem question="What if I cannot find my question on this list?" />
-        <AccordionItem question="How do I contact ixigo customer care?" />
-        <AccordionItem question="How can I track refunds on ixigo?" />
-        <AccordionItem question="How do I cancel my ticket on ixigo?" />
-        <AccordionItem question="How do I get a refund on a ticket booking through ixigo?" />
+        <AccordionItem question="How do I contact Hotel Booking customer care?" />
+        <AccordionItem question="How can I track refunds on Hotel Booking?" />
+        <AccordionItem question="How do I cancel my ticket on Hotel Booking?" />
+        <AccordionItem question="How do I get a refund on a ticket booking through Hotel Booking?" />
         <AccordionItem question="What is your Customer Grievance Redressal policy?" />
       </div>
     </div>

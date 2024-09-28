@@ -84,7 +84,7 @@ const HotelPage = () => {
 
         {/* Room Selection */}
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4">Select Your Room</h2>
+          <h2 className="text-2xl font-semibold mb-4">Available Room</h2>
           <div className="space-y-4">
             {[
               {

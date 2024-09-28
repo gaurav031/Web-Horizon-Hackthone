@@ -1,8 +1,8 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ isDarkMode }) => {
   return (
-    <div className="bg-white text-gray-800 py-12">
+    <div className={`py-12 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row flex-wrap justify-between px-6 gap-6">
         {/* Countries Section */}
         <div className="flex-1 space-y-4 mb-4 sm:mb-0">
