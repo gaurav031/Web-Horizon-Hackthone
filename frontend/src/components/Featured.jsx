@@ -5,7 +5,7 @@ const Featured = () => {
   const navigate = useNavigate();
 
   const handleSearch = (city) => {
-    navigate(`/${city.toLowerCase()}`);
+    navigate(`/berlin`);
   };
 
   // Static data for cities and properties

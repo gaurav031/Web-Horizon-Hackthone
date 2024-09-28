@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const CustomerCarePage = () => {
   return (
     <div className="p-6 mt-5">
-        <Navbar />
+      <Navbar />
       <header className="mb-6 mt-7">
         <h1 className="text-2xl font-bold">Hi Gaurav, need help with your recent booking?</h1>
         <a href="#" className="text-orange-500 float-right">View all your bookings &gt;</a>
@@ -173,7 +173,7 @@ const AccordionItem = ({ question }) => {
           <p className="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis quam id leo feugiat, in tincidunt lacus facilisis.</p>
         </div>
       )}
-   
+
     </div>
 
 
