@@ -7,10 +7,11 @@ import FeaturedProperties from '../components/FeaturedProperties';
 import Featured from '../components/Featured';
 import PropertyList from '../components/PropertyList';
 import Whythis from '../components/Whythis';
+import ChatIcon from '../components/ChatIcon'; // Import ChatIcon component
 
 const Home = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 relative">
       <Navbar />
       <Hadder />
       <div className="homeContainer max-w-7xl mx-auto p-4 lg:mt-[-140px]">
@@ -28,6 +29,9 @@ const Home = () => {
 
         <MailList />
       </div>
+
+      <ChatIcon /> {/* Add the ChatIcon component */}
+
       <Footer />
     </div>
   );

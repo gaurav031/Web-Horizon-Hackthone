@@ -39,6 +39,7 @@ const Hadder = ({ type }) => {
   };
 
   return (
+
     <div
       className="bg-cover bg-center text-white flex justify-center relative h-[320px] mb-[40px] p-4 sm:p-6 md:p-8"
       style={{
@@ -63,6 +64,22 @@ const Hadder = ({ type }) => {
             >
               <FontAwesomeIcon icon={option.icon} />
               <span className="text-sm md:text-base">{option.label}</span>
+
+    <div className="bg-cover bg-center text-white flex justify-center relative h-[320px] mb-[200px] p-4 sm:p-6 md:p-8 md:mb-[30px]" 
+    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587115462907-cc1e5923b043?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+      <div className={`w-full max-w-6xl ${type === "list" ? "my-5" : "my-10"}`}>
+        <div className="flex flex-wrap gap-2 mb-8 font-bold text-black">
+          {[
+            { icon: faBed, label: "Stays" },
+            { icon: faPlane, label: "Flights" },
+            { icon: faCar, label: "Car rentals" },
+            { icon: faBed, label: "Attractions" },
+            { icon: faTaxi, label: "Airport taxis" },
+          ].map(({ icon, label }) => (
+            <div key={label} className="flex items-center gap-2 border border-white p-2 rounded-full hover:cursor-pointer">
+              <FontAwesomeIcon icon={icon} />
+              <span className="text-sm md:text-base hover:cursor-pointer">{label}</span>
+
             </div>
           ))}
         </div>
@@ -70,7 +87,9 @@ const Hadder = ({ type }) => {
         {type !== "list" && (
           <>
             <h1 className="text-2xl md:text-4xl font-bold mb-4 relative z-10">
+
               {/* Added relative z-index */}
+
               A lifetime of discounts? It's Genius.
             </h1>
             <p className="text-sm md:text-base mb-8">
@@ -79,15 +98,18 @@ const Hadder = ({ type }) => {
             </p>
 
             <div className="bg-white text-black border-4 border-yellow-400 flex flex-col md:flex-row items-center justify-between py-4 px-5 rounded-lg">
+              {/* Destination Input */}
               <div className="flex items-center gap-2 w-full mb-4 md:mb-0">
                 <FontAwesomeIcon icon={faBed} className="text-gray-500" />
                 <input
                   type="text"
                   placeholder="Where are you going?"
-                  className="outline-none flex-grow"
+                  className="outline-none flex-grow py-2 px-2 md:py-1 md:px-3"
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
+
+              {/* Date Picker */}
               <div className="flex items-center gap-2 relative w-full mb-4 md:mb-0">
                 <FontAwesomeIcon icon={faCalendarDays} className="text-gray-500" />
                 <span
@@ -107,10 +129,12 @@ const Hadder = ({ type }) => {
                   />
                 )}
               </div>
+
+              {/* Options Selector */}
               <div className="relative w-full mb-4 md:mb-0">
                 <div
                   onClick={() => setOpenOptions(!openOptions)}
-                  className="cursor-pointer text-gray-500"
+                  className="cursor-pointer text-gray-500 text-center md:text-left"
                 >
                   {`${options.adult} adult · ${options.children} children · ${options.room} room`}
                 </div>
@@ -140,6 +164,8 @@ const Hadder = ({ type }) => {
                   </div>
                 )}
               </div>
+
+              {/* Search Button */}
               <button
                 onClick={handleSearch}
                 className="bg-blue-700 text-white py-2 px-4 font-semibold rounded-lg w-full md:w-auto"
@@ -147,6 +173,7 @@ const Hadder = ({ type }) => {
                 Search
               </button>
             </div>
+
           </>
         )}
       </div>

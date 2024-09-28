@@ -3,7 +3,7 @@ import React from 'react';
 const Whythis = () => {
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-semibold mb-6 text-center">Why Book Hotels With ixigo?</h1>
+      <h1 className="text-3xl font-semibold mb-6 text-center">Why Book Hotels With Hotel Booking?</h1>
       <div className="flex flex-wrap justify-center gap-4">
         {/* Best Deals */}
         <img 

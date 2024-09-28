@@ -1,0 +1,18 @@
+.tab-active {
+    background-color: #FF5722;
+    color: white;
+  }
+  
+  .tab-inactive {
+    background-color: #FFE0B2;
+    color: black;
+  }
+  
+  .sub-tab-active {
+    color: #FF5722;
+    border-bottom: 2px solid #FF5722;
+  }
+  
+  .sub-tab-inactive {
+    color: #9E9E9E;
+  }

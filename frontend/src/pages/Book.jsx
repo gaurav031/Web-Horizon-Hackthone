@@ -1,11 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Book = () => {
     return (
         <>
             <Navbar />
+
             <div className="p-6 bg-gray-100 mt-[30px]">
                 <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -15,6 +17,41 @@ const Book = () => {
                                 <div className="flex justify-between mb-2">
                                     <span>1 Room, 1 Night</span>
                                     <span>₹1,620</span>
+
+            <div className="p-6 bg-gray-100 ">
+                    <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg  mt-20">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="col-span-1">
+                                <div className="border p-4 rounded-lg">
+                                    <h2 className="text-lg font-bold mb-4">Fare Summary</h2>
+                                    <div className="flex justify-between mb-2">
+                                        <span>1 Room, 1 Night</span>
+                                        <span>₹1,620</span>
+                                    </div>
+                                    <div className="flex justify-between mb-2">
+                                        <span>Taxes & Charges</span>
+                                        <span>₹315.50</span>
+                                    </div>
+                                    <div className="flex justify-between mb-2">
+                                        <span>Discounts</span>
+                                        <span>₹121.50</span>
+                                    </div>
+                                    <div className="flex justify-between font-bold mb-2">
+                                        <span>Net Payable Amount</span>
+                                        <span>₹1,814.00</span>
+                                    </div>
+                                    <div className="flex justify-between mb-2">
+                                        <span>Pay now</span>
+                                        <span>₹0.00</span>
+                                    </div>
+                                    <div className="flex justify-between mb-2">
+                                        <span>Pay at hotel</span>
+                                        <span>₹1,814.00</span>
+                                    </div>
+                                    <p className="text-sm text-gray-600 mt-4">
+                                        Total amount should be paid at the hotel in local currency based on the hotel location
+                                    </p>
+
                                 </div>
                                 <div className="flex justify-between mb-2">
                                     <span>Taxes & Charges</span>
@@ -140,6 +177,11 @@ const Book = () => {
                                     We will forward your request to the hotel. Please note that this is subject to availability and based on the hotel policies.
                                 </p>
                                 <a href="#" className="text-blue-600">Add Request</a>
+
+                                <Link to='/trip' >
+                                <button className="w-full bg-orange-500 text-white p-4 rounded-lg font-bold">Book Now</button>
+
+                                </Link>
                             </div>
                             <button className="w-full bg-orange-500 text-white p-4 rounded-lg font-bold">Book Now</button>
                         </div>

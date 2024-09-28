@@ -1,19 +1,19 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const OfferPage = () => {
     return (
-        <div className="p-4 mt-6" bg-gray-100 >
+        <div className="p-4 mt-6 bg-gray-100">
             <Navbar />
             <nav className="flex items-center space-x-2 text-gray-600 text-sm mb-4">
                 <a href="#" className="hover:underline">Home</a>
                 <span>/</span>
                 <a href="#" className="hover:underline">Offers</a>
             </nav>
-            <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">ixigo Offers | Flight, Train, Bus and Hotel Deals</h1>
-                <div className="flex space-x-2">
+            <div className="flex justify-between items-center mb-4 flex-wrap">
+                <h1 className="text-2xl font-bold w-full md:w-auto">ixigo Offers | Flight, Train, Bus and Hotel Deals</h1>
+                <div className="flex flex-wrap space-x-2 mt-2 md:mt-0">
                     <button className="px-4 py-2 bg-blue-100 text-blue-600 rounded-full">All Offers</button>
                     <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full">Flights</button>
                     <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full">Trains</button>
@@ -21,12 +21,12 @@ const OfferPage = () => {
                     <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full">Bus Offers</button>
                 </div>
             </div>
-            <div className="flex">
-                <aside className="w-1/4 p-4 bg-white rounded-lg shadow-md">
+            <div className="flex flex-col md:flex-row">
+                <aside className="w-full md:w-1/4 p-4 bg-white rounded-lg shadow-md mb-4 md:mb-0">
                     <h2 className="text-lg font-semibold mb-4">Filters</h2>
                     <div className="mb-4">
                         <h3 className="text-md font-medium mb-2">Journey Type</h3>
-                        <div className="flex space-x-2">
+                        <div className="flex flex-wrap space-x-2">
                             <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full">Domestic<br />35 Offers</button>
                             <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full">International<br />34 Offers</button>
                         </div>
@@ -55,8 +55,8 @@ const OfferPage = () => {
                         </ul>
                     </div>
                 </aside>
-                <main className="w-3/4 p-4">
-                    <div className="grid grid-cols-2 gap-4">
+                <main className="w-full md:w-3/4 p-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {[
                             {
                                 img: 'https://www.ixigo.com/offers/_next/image?url=https%3A%2F%2Fimages.ixigo.com%2Fimage%2Fupload%2Foffers_and_deals%2F533c900b1963987f574f8da1f607d28d-fwygn.png&w=640&q=75',
@@ -120,15 +120,16 @@ const OfferPage = () => {
                             <div key={index} className="bg-white rounded-lg shadow-md p-4">
                                 <div className="relative">
                                     <img src={offer.img} alt={`Offer image for ${offer.title}`} className="w-full h-40 object-cover rounded-t-lg" />
-                                    <span className="absolute top-2 left-2 bg-yellow-400 text-white text-xs px-2 py-1 rounded-full">Expiry: {offer.expiry}</span>
+                                    <span className="absolute top-2 left-2 bg-green-500 text-white text-sm font-semibold px-2 rounded">{offer.type}</span>
                                 </div>
-                                <div className="p-4">
-                                    <span className="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">{offer.type}</span>
-                                    <h3 className="text-lg font-semibold mt-2">{offer.title}</h3>
-                                    <p className="text-gray-600 text-sm mt-1">{offer.details}</p>
-                                    {offer.code && <p className="text-orange-600 text-sm mt-1">{offer.code}</p>}
-                                    <a href="#" className="text-orange-600 text-sm mt-2 inline-block">Details <i className="fas fa-arrow-right"></i></a>
-                                </div>
+                                <h3 className="text-lg font-semibold mt-2">{offer.title}</h3>
+                                <p className="text-gray-500">{offer.details}</p>
+                                <p className="text-gray-400 text-sm">Expires in {offer.expiry}</p>
+                                {offer.code && (
+                                    <div className="bg-yellow-100 text-yellow-600 mt-2 p-2 rounded text-center">
+                                        <strong>Code:</strong> {offer.code}
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -136,7 +137,7 @@ const OfferPage = () => {
             </div>
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default OfferPage
+export default OfferPage;
