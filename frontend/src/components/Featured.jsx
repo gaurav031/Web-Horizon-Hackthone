@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 const Featured = () => {
   const navigate = useNavigate();
 
+
   const handleSearch = () => {
     navigate('/berlin');
+
   };
 
   // Static data for cities and properties

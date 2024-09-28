@@ -6,25 +6,33 @@ import { faHeart, faChevronLeft, faChevronRight, faCheck, faUtensils, faConcierg
 import { hotel } from '../data/hotel';
 import Footer from '../components/Footer';
 import { useNavigate } from "react-router-dom";
+
 const List = () => {
     const navigate = useNavigate();
     const handleSearch = () => {
-        navigate('/hotelpage')
-
+        navigate('/hotelpage');
     };
+
     return (
         <div className="bg-gray-100 font-sans min-h-screen flex flex-col">
             <Navbar />
             <Hadder />
+
+            <div className="container mx-auto p-6 flex-grow mt-48 md:mt-[10px]">
+                <div className="flex flex-col md:flex-row h-full">
+                    {/* Filters Section */}
+                    <div className="w-full md:w-1/4 bg-white p-4 rounded shadow-md mb-6 md:mb-0 md:h-auto h-64 overflow-y-auto md:overflow-y-visible">
+
             <div className="container mx-auto p-6 flex-grow ">
                 <div className="flex flex-col md:flex-row h-full">
                     {/* Filters Section */}
                     <div className="w-full md:w-1/4 bg-white p-4 rounded shadow-md mb-6 md:mb-0 ">
+
                         <h2 className="text-lg font-bold mb-4">Filters</h2>
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Most Popular</h3>
                             {['Free Cancellation', 'Free Breakfast', 'Rated Exceptional (9+)', 'Parking Available'].map((label, index) => (
-                                <div className="flex items-center mb-2" key={index}>
+                                <div className="flex items-center mb-2 text-sm" key={index}>
                                     <input className="mr-2" id={`filter-${index}`} type="checkbox" />
                                     <label htmlFor={`filter-${index}`}>{label}</label>
                                 </div>
@@ -38,47 +46,43 @@ const List = () => {
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">User Rating</h3>
                             {['exceptional', 'excellent', 'very-good', 'good', 'pleasant'].map((rating, index) => (
-                                <div className="flex items-center mb-2" key={index}>
+                                <div className="flex items-center mb-2 text-sm" key={index}>
                                     <input className="mr-2" id={rating} name="user-rating" type="radio" />
                                     <label htmlFor={rating}>{rating.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())} 9+</label>
                                 </div>
                             ))}
                         </div>
-                        {/* Facilities Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Facilities</h3>
                             {['Room Service', 'CCTV Security', 'Non-Smoking Rooms'].map((facility, index) => (
-                                <div className="flex items-center mb-2" key={index}>
+                                <div className="flex items-center mb-2 text-sm" key={index}>
                                     <input className="mr-2" id={facility} type="checkbox" />
                                     <label htmlFor={facility}>{facility}</label>
                                 </div>
                             ))}
                         </div>
-                        {/* Star Rating Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Star Rating</h3>
                             {[1, 2, 3, 4, 5].map((star) => (
-                                <div className="flex items-center mb-2" key={star}>
+                                <div className="flex items-center mb-2 text-sm" key={star}>
                                     <input className="mr-2" id={`${star}-star`} type="checkbox" />
                                     <label htmlFor={`${star}-star`}>{star} Star ({star})</label>
                                 </div>
                             ))}
                         </div>
-                        {/* Accommodation Type Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Accommodation Type</h3>
                             {['Homestay', 'Hotel', 'Apartment', 'Hostel', 'Resort', 'Guest House'].map((type, index) => (
-                                <div className="flex items-center mb-2" key={index}>
+                                <div className="flex items-center mb-2 text-sm" key={index}>
                                     <input className="mr-2" id={type} type="checkbox" />
                                     <label htmlFor={type}>{type} (1)</label>
                                 </div>
                             ))}
                         </div>
-                        {/* Payment Mode Section */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Payment Mode</h3>
                             {['Pay at Hotel', 'Prepaid'].map((mode, index) => (
-                                <div className="flex items-center mb-2" key={index}>
+                                <div className="flex items-center mb-2 text-sm" key={index}>
                                     <input className="mr-2" id={mode} type="checkbox" />
                                     <label htmlFor={mode}>{mode}</label>
                                 </div>
@@ -87,10 +91,10 @@ const List = () => {
                     </div>
 
                     {/* Listings Section */}
-                    <div className="w-100vw md:w-full ml-0 md:ml-4 overflow-y-auto" style={{ maxHeight: 'calc(210vh - 100px)' }}>
+                    <div className="w-full md:w-3/4 ml-0 md:ml-4 overflow-y-auto" style={{ maxHeight: 'calc(200vh - 150px)' }}>
                         <div className="flex justify-between items-center mb-4 pr-5">
                             <h2 className="text-xl font-bold">Your Hotels</h2>
-                            <select className="border rounded-lg p-2">
+                            <select className="border rounded-lg p-2 text-sm">
                                 <option>Popularity</option>
                                 <option>Price: Low to High</option>
                                 <option>Price: High to Low</option>
@@ -100,12 +104,16 @@ const List = () => {
 
                         {/* Hotel Listing */}
                         {hotel.map((hotels) => (
+ 
+                            <div className="bg-white rounded shadow-md flex flex-col md:flex-row mb-4 p-4" key={hotels.id}>
+                                <div className="relative w-full md:w-1/3 mb-4 md:mb-0">
+
                             <div className="bg-white rounded shadow-md flex flex-col sm:flex-row mb-4 p-4" key={hotels.id}>
                                 <div className="relative w-full sm:w-1/3 mb-4 sm:mb-0">
-                                    <img
+                       <img
                                         src={hotels.image}
-                                        alt="Hotel lobby with reception desk and seating area"
-                                        className="w-full h-full object-cover rounded-l"
+                                        alt={hotels.name}
+                                        className="w-[250px] h-[200px] md:h-full object-cover rounded-l"
                                     />
                                     <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">Last Minute Deal</div>
                                     <div className="absolute top-2 right-2 bg-white text-gray-500 rounded-full p-1">
@@ -128,27 +136,33 @@ const List = () => {
                                         </button>
                                     </div>
                                 </div>
+
+                                <div className="w-full md:w-2/3 p-2">
+
                                 <div className="w-full sm:w-2/3 p-4">
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <h2 className="text-xl font-bold">{hotels.name}<span className="text-gray-500">★★★★☆</span></h2>
-                                            <p className="text-gray-500">{hotels.distance}</p>
-                                            <div className="flex items-center mt-2">
-                                                <span className="text-blue-500 font-bold text-lg">{hotels.rating}</span>
-                                                <span className="ml-2 text-blue-500 font-bold">{hotels.ratingText}</span>
-                                                <span className="ml-2 text-gray-500">• {hotels.ratingsCount}</span>
+                                            <h2 className="text-lg font-bold">{hotels.name}<span className="text-gray-500">★★★★☆</span></h2>
+                                            <p className="text-gray-500 text-sm">{hotels.distance}</p>
+                                            <div className="flex items-center mt-1">
+                                                <span className="text-blue-500 font-bold text-md">{hotels.rating}</span>
+                                                <span className="ml-2 text-blue-500 font-bold text-sm">{hotels.ratingText}</span>
+                                                <span className="ml-2 text-gray-500 text-sm">• {hotels.ratingsCount}</span>
                                             </div>
-                                            <div className="mt-2">
-                                                <span className="text-green-500 font-bold"><FontAwesomeIcon icon={faCheck} /> Free Wifi</span>
+                                            <div className="mt-1">
+                                                <span className="text-green-500 font-bold text-sm"><FontAwesomeIcon icon={faCheck} /> Free Wifi</span>
                                             </div>
-                                            <div className="mt-2">
+                                            <div className="mt-1 flex items-center space-x-4 text-sm">
                                                 <span className="text-green-500 font-bold"><FontAwesomeIcon icon={faUtensils} /> Restaurant</span>
-                                                <span className="text-green-500 font-bold ml-4"><FontAwesomeIcon icon={faConciergeBell} /> Concierge</span>
+                                                <span className="text-green-500 font-bold"><FontAwesomeIcon icon={faConciergeBell} /> Concierge</span>
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-lg font-bold">₹{hotels.price} <span className="text-gray-500">per night</span></p>
-                                            <button className="bg-blue-500 text-white rounded mt-2 p-2 transition hover:bg-blue-600">Book Now</button>
+                                            <p className="text-lg font-bold text-blue-500">₹{hotels.price} <span className='text-slate-600'>Per Night</span></p>
+
+                                            <button className="bg-blue-500 text-white rounded-lg py-2 px-4 mt-2"
+                                                onClick={handleSearch}
+                                            >View More</button>
                                         </div>
                                     </div>
                                 </div>
@@ -158,8 +172,8 @@ const List = () => {
                     </div>
                 </div>
             </div>
-            <Footer className="fixed bottom-0 left-0 right-0" />
-        </div>
+            <Footer />
+        </div >
     );
 };
 
