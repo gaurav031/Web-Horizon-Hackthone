@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
@@ -7,51 +7,16 @@ const Book = () => {
     return (
         <>
             <Navbar />
-
-            <div className="p-6 bg-gray-100 mt-[30px]">
-                <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <div className="p-6 bg-gray-100 mt-[5px]">
+                <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-20">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {/* Fare Summary Section */}
                         <div className="col-span-1">
                             <div className="border p-4 rounded-lg">
                                 <h2 className="text-lg font-bold mb-4">Fare Summary</h2>
                                 <div className="flex justify-between mb-2">
                                     <span>1 Room, 1 Night</span>
                                     <span>₹1,620</span>
-
-            <div className="p-6 bg-gray-100 ">
-                    <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg  mt-20">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="col-span-1">
-                                <div className="border p-4 rounded-lg">
-                                    <h2 className="text-lg font-bold mb-4">Fare Summary</h2>
-                                    <div className="flex justify-between mb-2">
-                                        <span>1 Room, 1 Night</span>
-                                        <span>₹1,620</span>
-                                    </div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Taxes & Charges</span>
-                                        <span>₹315.50</span>
-                                    </div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Discounts</span>
-                                        <span>₹121.50</span>
-                                    </div>
-                                    <div className="flex justify-between font-bold mb-2">
-                                        <span>Net Payable Amount</span>
-                                        <span>₹1,814.00</span>
-                                    </div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Pay now</span>
-                                        <span>₹0.00</span>
-                                    </div>
-                                    <div className="flex justify-between mb-2">
-                                        <span>Pay at hotel</span>
-                                        <span>₹1,814.00</span>
-                                    </div>
-                                    <p className="text-sm text-gray-600 mt-4">
-                                        Total amount should be paid at the hotel in local currency based on the hotel location
-                                    </p>
-
                                 </div>
                                 <div className="flex justify-between mb-2">
                                     <span>Taxes & Charges</span>
@@ -74,16 +39,25 @@ const Book = () => {
                                     <span>₹1,814.00</span>
                                 </div>
                                 <p className="text-sm text-gray-600 mt-4">
-                                    Total amount should be paid at the hotel in local currency based on the hotel location
+                                    Total amount should be paid at the hotel in local currency based on the hotel location.
                                 </p>
                             </div>
+                            {/* Offers Section */}
                             <div className="border p-4 rounded-lg mt-4">
                                 <h2 className="text-lg font-bold mb-4">Offers For You</h2>
-                                <input type="text" placeholder="Have a promo code? Redeem here" className="w-full p-2 border rounded-lg" />
+                                <input
+                                    type="text"
+                                    placeholder="Have a promo code? Redeem here"
+                                    className="w-full p-2 border rounded-lg"
+                                />
                             </div>
+                            {/* Payment Information */}
                             <div className="text-sm text-gray-600 mt-4">
                                 <p>
-                                    By clicking on Pay Now/Book Now, I confirm that I have read, understood, and agree with the <a href="#" className="text-blue-600">Cancellation Policy</a>, <a href="#" className="text-blue-600">Privacy Policy</a> and <a href="#" className="text-blue-600">User Agreement</a>.
+                                    By clicking on Pay Now/Book Now, I confirm that I have read, understood, and agree with the
+                                    <a href="#" className="text-blue-600"> Cancellation Policy</a>,
+                                    <a href="#" className="text-blue-600"> Privacy Policy</a>, and
+                                    <a href="#" className="text-blue-600"> User Agreement</a>.
                                 </p>
                                 <p className="mt-2">
                                     Please note that this rate will not provide a tax invoice. You will be given a commercial receipt to serve as proof of transaction.
@@ -96,6 +70,8 @@ const Book = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Personal Details Section */}
                         <div className="col-span-2">
                             <div className="border p-4 rounded-lg mb-4">
                                 <h2 className="text-lg font-bold mb-4">Enter Your Details</h2>
@@ -126,6 +102,8 @@ const Book = () => {
                                     </select>
                                 </div>
                             </div>
+
+                            {/* Hotel Details Section */}
                             <div className="border p-4 rounded-lg mb-4">
                                 <h2 className="text-lg font-bold mb-4">Hotel Blue Wellington</h2>
                                 <p className="text-sm text-gray-600 mb-4">
@@ -151,16 +129,20 @@ const Book = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Room Details Section */}
                             <div className="border p-4 rounded-lg mb-4">
                                 <h2 className="text-lg font-bold mb-4">Room Details</h2>
                                 <p className="mb-4">Deluxe Double Room</p>
-                                <p className="text-sm text-gray-600 mb-4">1 king bed, 11 sqm, 1 queen bed or 1 double bed, City view, Sleeps 2</p>
+                                <p className="text-sm text-gray-600 mb-4">1 king bed, 11 sqm, City view, Sleeps 2</p>
                                 <h3 className="font-bold mb-2">Room Benefits</h3>
                                 <ul className="list-disc list-inside">
                                     <li>Parking</li>
                                     <li>Free WiFi</li>
                                 </ul>
                             </div>
+
+                            {/* Cancellation Policy Section */}
                             <div className="border p-4 rounded-lg mb-4">
                                 <h2 className="text-lg font-bold mb-4">Cancellation Policy</h2>
                                 <p className="text-sm text-gray-600 mb-4">100% amount will be deducted on cancellation.</p>
@@ -171,19 +153,20 @@ const Book = () => {
                                 </div>
                                 <a href="#" className="text-blue-600">View Cancellation Policy</a>
                             </div>
+
+                            {/* Special Request Section */}
                             <div className="border p-4 rounded-lg mb-4">
                                 <h2 className="text-lg font-bold mb-4">Special Request</h2>
                                 <p className="text-sm text-gray-600 mb-4">
                                     We will forward your request to the hotel. Please note that this is subject to availability and based on the hotel policies.
                                 </p>
                                 <a href="#" className="text-blue-600">Add Request</a>
-
-                                <Link to='/trip' >
-                                <button className="w-full bg-orange-500 text-white p-4 rounded-lg font-bold">Book Now</button>
-
-                                </Link>
                             </div>
-                            <button className="w-full bg-orange-500 text-white p-4 rounded-lg font-bold">Book Now</button>
+
+                            {/* Booking Button */}
+                            <Link to='/trip'>
+                                <button className="w-full bg-orange-500 text-white p-4 rounded-lg font-bold">Book Now</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -191,10 +174,7 @@ const Book = () => {
 
             <Footer />
         </>
-
     );
-}
+};
 
-
-
-export default Book
+export default Book;

@@ -121,22 +121,17 @@ const Navbar = () => {
           {user ? (
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
               <div className="flex items-center space-x-2">
-
-                <img
-
                 {/* Display user profile image or default icon */}
-                 <Link to="/profile">
-                 <img
+                <Link to="/profile">
+                  <img
+                    src="https://i.im.ge/2024/09/27/kdlCkq.profile.jpeg"
+                    alt="Profile"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
+                  />
+                </Link>
 
-                  src="https://i.im.ge/2024/09/27/kdlCkq.profile.jpeg"
-                  alt="Profile"
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
-                />
-
-                 </Link>
-               
                 {/* Display username */}
-  <span className="text-gray-700 font-bold">{user.user}</span>
+                <span className="text-gray-700 font-bold">{user.user}</span>
               </div>
               <button
                 onClick={handleLogout}
