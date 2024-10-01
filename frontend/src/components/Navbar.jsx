@@ -70,7 +70,7 @@ const Navbar = () => {
         <img
           src="https://i.im.ge/2024/09/27/kdlet6.logo-removebg-preview.png"
           alt="logo"
-          className="w-34 h-12 bg-white p-2 rounded-sm"
+          className="w-34 h-12"
         />
       </Link>
 
@@ -95,29 +95,21 @@ const Navbar = () => {
       </button>
 
       <div
-        className={`flex-col md:flex md:flex-row md:items-center absolute md:static ${isDarkMode ? 'bg-gray-800' : 'bg-white'} md:bg-transparent shadow-md md:shadow-none transition-all duration-300 ${isOpen ? 'top-16 left-0 w-full' : 'top-[-300px]'} md:top-0 md:w-auto md:space-x-4`}
+        className={`flex-col md:flex md:flex-row md:items-center absolute md:static ${isDarkMode ? 'bg-gray-800' : 'bg-white'} md:bg-transparent shadow-md md:shadow-none transition-all duration-300 ${isOpen ? "top-16 left-0 w-full" : "top-[-300px]"} md:top-0 md:w-auto md:space-x-4`}
       >
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 p-4 md:p-0">
           <Link
             to="/offer"
-            className={`px-4 py-2 hover:text-gray-900 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}
+            className="px-4 py-2 hover:text-gray-900 font-semibold"
           >
-            {t("Offers")}
+            {t("offers")}
           </Link>
           <Link
             to="/customercare"
-            className={`px-4 py-2 hover:text-gray-900 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}
+            className="px-4 py-2 hover:text-gray-900 font-semibold"
           >
-            {t("CustomerService")}
+            {t("customerService")}
           </Link>
-
-           {/* Dark mode toggle button */}
-          <button
-            onClick={toggleDarkMode}
-            className={`px-4 py-2 rounded-md font-semibold transition-all duration-300 ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}
-          >
-            {isDarkMode ? t("lightMode") : t("darkMode")}
-          </button>
 
           {/* Language selection dropdown */}
           <div className="relative">
@@ -132,8 +124,14 @@ const Navbar = () => {
                 </option>
               ))}
             </select>
-            <br />
-            
+            {" "}
+            {/* Dark mode toggle button */}
+            <button
+              onClick={toggleDarkMode}
+              className={`px-4 py-2 rounded-md font-semibold transition-all duration-300 ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}
+            >
+              {isDarkMode ? t("lightMode") : t("darkMode")}
+            </button>
           </div>
 
           {user ? (
@@ -148,11 +146,9 @@ const Navbar = () => {
                 </Link>
                 <span className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-700'}`}>{user.user}</span>
               </div>
-              
-              {/* Hide logout button on small screens */}
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600 transition-all duration-300 font-semibold hidden md:block"
+                className="px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600 transition-all duration-300 font-semibold"
               >
                 {t("logout")}
               </button>
