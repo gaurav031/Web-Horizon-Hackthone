@@ -12,7 +12,6 @@ A modern, single-page web app to **browse hotels**, **view rich hotel pages**, a
 - 💳 **Booking Flow**: Select room → guest details → payment (mock/plug-in) → confirmation.
 - 🧾 **Bookings Dashboard**: See, modify, or cancel your bookings.
 - 🔗 **Multi-Platform Listings**: Show prices/links from other platforms side-by-side.
-- 🔐 **Auth**: Email/password login, JWT session (optional).
 - 🌓 **Responsive UI**: Built with **React + Material UI** (light/dark).
 - 🌐 **i18n-Ready**: Multi-language scaffolding (optional).
 
